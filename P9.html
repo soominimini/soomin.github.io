@@ -1,0 +1,401 @@
+<!DOCTYPE HTML>
+<!--
+	Helios by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Portfolio_virtual</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+
+    
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9PP3T9W5Q9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9PP3T9W5Q9');
+</script>
+
+
+</head>
+<style>
+
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    </style>
+<body class="no-sidebar is-preload">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<div id="header">
+
+			<!-- Inner -->
+			<div class="inner">
+				<header>
+					<h1><a id="logo"></a></h1>
+				</header>
+			</div>
+
+			<!-- Nav -->
+			<nav id="nav">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li>
+						<a href="#">Project list</a>
+						<ul>
+							<li><a href="./P2.html">Empathy in humans towards a robot</a></li>
+							<li><a href="./P3.html">What information do people use when perceving others' emotions?</a></li>
+							<li><a href="./P4.html">The different mechanism between Convolutional Neural Networks and Humans in Emotion Recognition</a></li>
+							<li><a href="./P1.html">Sentiment analysis system for psychological examinaiton</a></li>
+							
+							<li><a href="./P5.html">Teaching children programming via robotics</a></li>
+							<li><a href="./P7.html">Is block programming effective for adults when learning general programming languages?</a></li>
+							<li><a href="./P9.html">Can machine learning agents learn a social behavior?</a></li>
+							<li><a href="./P8.html">An Android application matches crowdfunding products to users based on their personality</a></li>
+							<li><a href="./P6.html">works resulting from the internship program </a></li>
+						</ul>
+					</li>
+					<!-- <li><a href="AboutMe.html">About Me</a></li> -->
+				</ul>
+			</nav>
+
+		</div>
+
+		<!-- Main -->
+		<div class="wrapper style1">
+
+			<div class="container" style="font-family: 'Times New Roman', Times, serif;">
+				<article id="main" class="special">
+					<header>
+						<h2><span style="font-size: 40px">Can machine learning agents learn a social behavior?
+							</span> </h2>
+						<p>
+							In prep
+						</p>
+					</header>
+
+					<div class="row">
+                        
+                        <article class="col-8 col-12-mobile special">
+                            <div style="position: relative;">
+                                <img  style="width: 100%;" src="images/my/p9/comb_final.png" />
+                                
+
+                            </div>
+                    </article>
+						<article class="col-4 col-12-mobile special">
+							<h3>
+								ROLE
+
+							</h3>
+							<p>
+								1) Design the whole process of application
+							</p>
+							<h3>
+								SKILLS UTILIZED
+
+							</h3>
+							<p style="margin-bottom: 5%;">
+								Coding(C#)
+							</p>
+							<h3>
+								SOFTWARE
+
+							</h3>
+							</header>
+							<p style="margin-bottom: 5%;">
+								Unity (ml-agent library)
+							</p>
+						</article>
+					</div>
+					<section>
+
+						<header>
+							<h3>Purpose of this project</h3>
+						</header>
+						<p>
+                            
+
+							Can the reinforcement learning method be used to teach virtual agents about ethics and social behavior? <br>
+                            The default behavior of machine-learning agents was to collect good foods and avoid bad ones. 
+                            This was done by rewarding agents when they encountered good foods and punishing them when they encountered bad foods.
+                            <br><br>
+                            <h3>Then can we teach agents to share good foods with other agents instead of consuming them?</h3>
+                            
+
+						</p>
+						<header style="margin-top: 2em">
+							<h3>Logic of our codes</h3>
+						</header>
+						<p>
+							
+                            The initial setting of our algorithm was making personal inventories per agent, adding a feeling hunger function to agents, 
+                            making them starve to death when they did not have enough foods, 
+                            and making agents share their foods in personal inventories when other agents were hungry.
+                            <br><br>
+
+                            1) Hunger function: made hunger gage per agent. It starts at 1000 and linearly decreases to 0 over time.<br><br>
+                            2) Starve to death: When the agent's hunger gage hits 0 and certain periods of time pass, punish the agent and make that agent revive.<br><br>
+                            <div id = "eat food">
+
+                                3) Eating food function/collecting food function:
+                                <div id = "eat food2" style="padding-left: 5%;">
+                                    If the agent encounters food and its hunger gage is under 500:  <br>
+                                    <div id = "eat food3" style="padding-left: 5%;">
+                                        Eat the encountered food immediately; 
+                                    </div>
+                                    Else: Add the food to the inventory.<br><br>
+                                </div>
+                            </div><br>
+                            4) Inventory: We varied the inventory size among 2, 3, 5. 
+                            <div id ="inv1" style="padding-left: 5%">
+
+                                If the agent encounters the food and if it is not hungry:
+                                <div id ="inv2" style="padding-left: 5%">
+                                    Put the food into the inventory until the inventory size is full.
+                                </div>
+                            </div><br>
+                            
+                            <div id = "share">
+                                5) Sharing behavior:<br>
+                                <div id = "share2" style="padding-left: 5%">
+
+                                    If agent encounters another agent:<br>
+                                    <div id = "share4" style="padding-left: 5%">
+                                        Check encountered friend agent's hunger gage<br>
+                                        If friend's hunger gage is lower than mine & I have more than one food in my inventory:<br>
+                                        <div id = "share3" style="padding-left: 5%">
+                                            Share one food.<br>
+                                        </div>
+                                        Else:<br>
+                                        <div id = "share3" style="padding-left: 5%">
+                                            Do not share foods<br>
+                                        </div>
+                                    </div>
+                                <br>
+                            </div>
+                            </div>
+                        </p>
+					</section>
+                    <section>
+                        <header>
+							<h3>Three conditions for test</h3>
+						</header>
+                            <div class="row">
+                                <article class="col-12 col-12-mobile special">
+
+                                
+
+                                    <table  border ="100px"  bgcolor=#11a9c1  bordercolor="white" > 
+                                        <!-- <caption>Computational models</caption> -->
+                                    <colgroup>
+                                        <col style="background-color:darkseagreen;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <!-- <th rowspan="2">구분</th> -->
+                                            <th colspan="1"  bgcolor="wheat"> </th>
+                                            <th colspan="1" bgcolor="wheat">Default</th>
+                                            <th colspan="1" bgcolor="wheat">No death even after starvation</th>
+                                            <th colspan="1" bgcolor="wheat">Death after starvation</th>
+                                            <!-- <th></th> -->
+                                            <!-- <th></th> -->
+                                        </tr>
+                                        <!-- <tr>
+                                            <th></th>
+                                            <th>Baseline</th>
+                                            <th>Epochs</th>
+                                            <th>Optimizer</th>
+                                            
+                                        </tr> -->
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td align="center"> Hunger gage </td>
+                                            <td bgcolor="white" align="center">X <br>(No hunger gage)</td>
+                                            
+                                            <td bgcolor="white"width="30%" align="center">1000 (Linearly decrese to zero)</td>
+                                            <td bgcolor="white"width="35%" align="center">1000 (Linearly decrese to zero)</td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center"> Reward types</td>
+                                            <td bgcolor="white"align="center">Only reward</td>
+                                            <td bgcolor="white"align="center">Only reward</td>
+                                            <td bgcolor="white"align="center">Reward and Punishment</td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center"> Sharing behavior</td>
+                                            <td bgcolor="white" align="center">X <br>(Eat foods as soon as encounter them)</td>
+                                            <td bgcolor="white"align="center">Share foods when encounter other agents</td>
+                                            <td bgcolor="white"align="center"> Share foods when encounter other agents</td>
+                                        </tr>
+                                        <tr >
+                                            <td align="center">Inventory Size</td>
+                                            <td bgcolor="white"align="center">X variation</td>
+                                            <td bgcolor="white"align="center">Slot size from 1,2, to 5</td>
+                                            <td bgcolor="white"align="center">Slot size from 1,2, to 5</td>
+                                        </tr>
+                                        <tr >
+                                            <td align="center">Description</td>
+                                            <td bgcolor="white">Default condition of published version of ML-Agents</td>
+                                            <td bgcolor="white">Even though the hunger gage hits zero, the agent does not die</td>
+                                            <td bgcolor="white">If an agent's hunger gage hits zero and a certain time has passed, the agent dies and be reset</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </article>
+                            </div>
+                    </section>
+                    <section>
+                        <header>
+							<h3>Results</h3>
+						</header>
+                            <div class="row">
+
+                                <article class="col-6 col-12-mobile special">
+                                    <head>Default</head>
+                                    <video controls width="100%">
+                                        
+                                        <source src="images/my/p9/default.mp4" type="video/webm">
+                                    </video>
+                                    
+                                </article>
+                                <article class="col-6 col-12-mobile special">
+                                    <head>Not die agents</head>
+                                    <video controls width="100%">
+                                        
+                                        <source src="images/my/p9/2nd condition.mp4" type="video/webm">
+                                    </video>
+                                    
+                                </article>
+                                <article class="col-6 col-12-mobile special">
+                                    <head>Die If Starve</head>
+                                    <video controls width="100%">
+                                        
+                                        <source src="images/my/p9/3rd condition.mp4" type="video/webm">
+                                    </video>
+                                    
+                                </article>
+                            </div>
+                    </section>
+                    <section>
+                        <div class="row">
+
+                            <article class="col-12 col-12-mobile special"><head> 
+                               Result
+                            </head><br><br>
+                                <head> 
+                                    <a href = "https://tensorboard.dev/experiment/6665AzUmREmR5SnnJVo7nQ/#scalars">Access to Full Logs</a>
+                                </head>
+                          <p style="text-align: left; font-weight: bold;">
+                            Group Score Results
+                          </p>
+                          <svg width="100%" height="400" xmlns="https://www.w3.org/2000/svg">
+                              <image href="./images/my/p9/GroupScore.svg" height="400" width="90%" />
+                              <g><text style = "font-size: 20; font-style: italic;"transform="translate(100, 20)" >Horizontal Axis: Steps</text></g>
+                              <g><text style = "font-size: 14; font-weight: bold; "transform="translate(100, 50)" >Red: Starve to death & Inventory size 5</text></g>
+                              <g><text style = "font-size: 14;"transform="translate(100, 70)" >Pink: X death & Inventory size 2</text></g>
+                              <g><text style = "font-size: 14;"transform="translate(100, 90)" >Green: X death & Inventory size 5</text></g>
+                              <g><text style = "font-size: 14;"transform="translate(100, 130)" >Navy: Starve to death & Inventory size 2</text></g>
+                              <g><text style = "font-size: 14;"transform="translate(100, 110)" >Sky: X death & Inventory size 1</text></g>
+                              <g><text style = "font-size: 14;"transform="translate(100, 150)" >Orange: Starve to death & Inventory size 1</text></g>
+                            </svg>
+                            <p>
+
+                                <svg width="100%" height="400" xmlns="https://www.w3.org/2000/svg">
+                                    <image href="./images/my/p9/GroupScore_rel.svg" height="400" width="90%"/>
+                                    <g><text style = "font-size: 20; font-style: italic;"transform="translate(100, 20)" >Horizontal Axis: Relative</text></g>
+                                    <g><text style = "font-size: 14; font-weight: bold; "transform="translate(100, 50)" >Red: Starve to death & Inventory size 5</text></g>
+                                    <g><text style = "font-size: 14;"transform="translate(100, 70)" >Green: X death & Inventory size 5</text></g>
+                                    <g><text style = "font-size: 14;"transform="translate(100, 90)" >Pink: X death & Inventory size 2</text></g>
+                                    <g><text style = "font-size: 14;"transform="translate(100, 110)" >Sky: X death & Inventory size 1</text></g>
+                                    <g><text style = "font-size: 14;"transform="translate(100, 130)" >Navy: Starve to death & Inventory size 2</text></g>
+                                    <g><text style = "font-size: 14;"transform="translate(100, 150)" >Orange: Starve to death & Inventory size 1</text></g>
+                                </svg>
+                            </p>
+                          <p style="text-align: left; font-weight: bold;">
+                            Total Score Results (Group+Individual scores)
+                          </p>
+                          <svg width="100%" height="400" xmlns="https://www.w3.org/2000/svg">
+                            <image href="./images/my/p9/TotalScore.svg" height="400" width="90%"/>
+                            <g><text style = "font-size: 20; font-style: italic;"transform="translate(100, 20)" >Horizontal Axis: Steps</text></g>  
+                            <g><text style = "font-size: 14;font-weight: bold; "transform="translate(100, 50)" >Grey: Default states</text></g>
+                            <g><text style = "font-size: 14;font-weight: bold; "transform="translate(100, 70)" >Pink: X death & Inventory size 2</text></g>
+                            <g><text style = "font-size: 14;"transform="translate(100, 90)" >Red: Starve to death & Inventory size 5</text></g>
+                            <g><text style = "font-size: 14;"transform="translate(100, 110)" >Green: X death & Inventory size 5</text></g>
+                            <g><text style = "font-size: 14;"transform="translate(100, 130)" >Sky: X death & Inventory size 1</text></g>
+                            <g><text style = "font-size: 14;"transform="translate(100, 150)" >Navy: Starve to death & Inventory size 2</text></g>
+                            <g><text style = "font-size: 14;"transform="translate(100, 170)" >Orange: Starve to death & Inventory size 1</text></g>
+                          </svg>
+                          <svg width="100%" height="400" xmlns="https://www.w3.org/2000/svg">
+                            <image href="./images/my/p9/TotalScore_rel.svg" height="400" width="90%"/>
+                            <g><text style = "font-size: 20; font-style: italic;"transform="translate(100, 20)" >Horizontal Axis: Relative</text></g>  
+                            <g><text style = "font-size: 14;font-weight: bold; "transform="translate(100, 50)" >Grey: Default states</text></g>
+                            <g><text style = "font-size: 14;font-weight: bold;"transform="translate(100, 70)" >Red: Starve to death & Inventory size 5</text></g>
+                            <g><text style = "font-size: 14;"transform="translate(100, 90)" >Green: X death & Inventory size 5</text></g>
+                            <g><text style = "font-size: 14; "transform="translate(100, 110)" >Pink: X death & Inventory size 2</text></g>
+                            <g><text style = "font-size: 14;"transform="translate(100, 130)" >Sky: X death & Inventory size 1</text></g>
+                            <g><text style = "font-size: 14;"transform="translate(100, 150)" >Navy: Starve to death & Inventory size 2</text></g>
+                            <g><text style = "font-size: 14;"transform="translate(100, 170)" >Orange: Starve to death & Inventory size 1</text></g>
+                          </svg>
+
+
+                    </article>
+                </div>
+                    </section>
+
+                    <section>
+                        <div class="row">
+
+                            <article class="col-12 col-12-mobile special">
+                                <p>
+                                    When the condition is set to default: only reward from eating foods, no punishment, and no sharing behavior, the total score, which includes group and individual scores, is undoubtedly the highest.
+                                        <br> <text style="font-weight: 1000">However</text>, What we focused on in this experiment was which condition yielded the best performance in the <i>Group score result</i>.
+                                        <br> Despite the punishment, the "red" condition (punishment when the agent dies, sharing foods with other agents, and five inventory slots) received the highest score. 
+                                        This is an outstanding result because the "red" condition outperformed the pink & green conditions, which were set as "no punishment" even though the agent died. 
+
+                                        <br>Given that the red condition consumes less time, comparing performance among conditions step by step is disadvantageous to the red condition. 
+                                        When compared according to the relative time, the gray condition showed the best performance for sure, and the rest of the conditions were ordered "pink-red-green-sky-navy-orange."
+                                        Since the red condition showed the highest score in the total result except for the gray, it is presumed that agents in the red condition received individual rewards as high as those received in other conditions.
+                                        <br> <br> <text style="font-weight: 1000; font-size: 16pt;">Summary:</text> It is not only possible to teach virtual agents sharing behaviors, but they can also be taught how to maximize individual and group scores. 
+                                        </p>
+                                </article>
+                                </div>
+                                </section>
+
+			</div>
+
+		</div>
+
+		<!-- Footer -->
+
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
