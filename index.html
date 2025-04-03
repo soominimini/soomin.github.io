@@ -32,16 +32,27 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      align-items: center;
+      text-align: center;
+    }
+
+    nav img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1rem;
     }
 
     nav h1 {
       font-size: 1.25rem;
       font-weight: 600;
+      margin-bottom: 1rem;
     }
 
     nav a {
       display: block;
-      margin: 1rem 0;
+      margin: 0.5rem 0;
       font-size: 0.9rem;
       color: #333;
       text-decoration: none;
@@ -78,88 +89,94 @@
 <body>
   <nav>
     <div>
+      <img src="images/profile.jpg" alt="Soomin Shin">
       <h1>Soomin Shin</h1>
       <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#experiences">Research Experiences</a>
+      <a href="#projects">Current Projects</a>
+      <a href="#experiences">Previous Projects</a>
       <a href="#publications">Publications</a>
       <a href="#contact">Contact</a>
+      <a href="cv.html" target="_blank">CV</a>
     </div>
     <small>&copy; 2025 Soomin Shin</small>
   </nav>
 
   <main>
-<section id="about">
-  <h2>About</h2>
-  <p>
-    I’m Soomin Shin, a Ph.D. candidate in Electrical and Computer Engineering at the University of Waterloo, advised by Professor Kerstin Dautenhahn. My research bridges Human-Robot Interaction (HRI), socially assistive robotics, and large language models (LLMs) to create intelligent, user-centered systems for real-world applications in therapy and education.
-  </p>
-  <p>
-    At the Social and Intelligent Robotics Research Lab, I lead projects on AI-driven robotic systems and co-designed therapy games, collaborating closely with therapists to ensure clinical usability and adaptability.
-  </p>
-  <p>
-    Prior to my Ph.D., I conducted research on contextual affect modeling at Korea University, comparing human emotion perception with CNN-based models—work that was presented at ACM ICMI. I’m passionate about building AI systems that are not only intelligent, but also empathetic and collaborative.
-  </p>
-</section>
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I’m Soomin Shin, a Ph.D. candidate in Electrical and Computer Engineering at the University of Waterloo, advised by Professor Kerstin Dautenhahn. My research bridges Human-Robot Interaction (HRI), socially assistive robotics, and large language models (LLMs) to create intelligent, user-centered systems for real-world applications in therapy and education.
+      </p>
+      <p>
+        At the Social and Intelligent Robotics Research Lab, I lead projects on AI-driven robotic systems and co-designed therapy games, collaborating closely with therapists to ensure clinical usability and adaptability.
+      </p>
+      <p>
+        Prior to my Ph.D., I conducted research on contextual affect modeling at Korea University, comparing human emotion perception with CNN-based models—work that was presented at ACM ICMI. I’m passionate about building AI systems that are not only intelligent, but also empathetic and collaborative.
+      </p>
+    </section>
 
-<section id="projects">
-  <h2>Current Research Projects</h2>
-  <ul>
-    <li>
-      <strong>LLM-driven Therapy Robot System</strong>  
-      – Developing a customizable robot system using large language models and RAG to support therapist-driven adaptations in real time. (Ongoing)
-    </li>
-    <li>
-      <strong>Co-designed Speech Therapy Games</strong>  
-      – Robot-integrated therapeutic approach built in collaboration with SLPs. Presented at ICSR 2024.
-    </li>
-    <li>
-      <strong>Multi-Agent Robot Trust Studies</strong>  
-      – Exploring how perceived robot hierarchies affect human trust in medical settings. Published at IROS 2023.
-    </li>
-    <li>
-      <strong>Contextual Affect Recognition</strong>  
-      – Comparing human vs. CNN emotion recognition models under contextual conditions. Presented at ACM ICMI 2022.
-    </li>
-  </ul>
-</section>
+    <section id="projects">
+      <h2>Current Research Projects</h2>
+      <ul>
+        <li>
+          <strong>LLM-driven Therapy Robot System</strong> – A customizable robot system using RAG and LLMs for real-time therapist-driven adaptation.
+          <a href="https://github.com/soominimini/therapy-llm-robot" target="_blank">[GitHub]</a>
+        </li>
+        <li>
+          <strong>Co-designed Speech Therapy Games</strong> – Robot-embedded therapeutic games co-developed with SLPs.
+          <a href="https://github.com/soominimini/QT_game_final" target="_blank">[Code]</a>
+        </li>
+        <li>
+          <strong>Multi-Agent Robot Trust Studies</strong> – Study on how hierarchical robot roles influence trust.
+        </li>
+        <li>
+          <strong>Contextual Affect Recognition</strong> – Human vs. CNN-based contextual emotion interpretation.
+        </li>
+      </ul>
+    </section>
 
     <section id="experiences">
-  <h2>Research Experiences</h2>
-  <ul>
-    <li>
-      <strong>Empathy Toward Robots</strong>  
-      – Behavioral study using Vector robot to explore how people show empathy toward robotic agents.
-    </li>
-  </ul>
-</section>
-
+      <h2>Previous Projects</h2>
+      <ul>
+        <li>
+          <strong>Empathy Toward Robots</strong> – How people express empathy to robots in social scenarios using Vector.
+        </li>
+        <li>
+          <strong>Emotion Perception Strategies</strong> – Qualitative study of emotion decoding strategies using face, context, and body cues.
+        </li>
+        <li>
+          <strong>Robot Game System Development</strong> – Built a complete robot tablet game system using ROS, Flask, and HTML.
+        </li>
+      </ul>
+    </section>
 
     <section id="publications">
-  <h2>Publications</h2>
-  <ul>
-    <li>
-      Azizi, N., Chandra, S., <strong>Shin, S.</strong>, Rajan, A., et al. (2024). <em>Development of robot-assisted speech-language therapy: Co-design with speech-language pathologists.</em> Proceedings of the 16th International Conference on Social Robotics (ICSR 2024), Springer.
-    </li>
-    <li>
-      Kwon, Y., <strong>Shin, S.</strong>, Yang, K., et al. (2023). <em>Heterogeneous robot-assisted services in isolation wards: A system development and usability study.</em> IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2023), IEEE.
-    </li>
-    <li>
-      <strong>Shin, S.</strong>, Kwak, S. S. (2023). <em>Do hierarchies in a robot team impact the service evaluation by users?</em> IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2023), IEEE.
-    </li>
-    <li>
-      <strong>Shin, S.</strong>, Kang, D., Kwak, S. S. (2023). <em>Is a robot trustworthy enough to delegate your control?</em> IEEE International Conference on Robot and Human Interactive Communication (RO-MAN 2023), IEEE.
-    </li>
-    <li>
-      <strong>Shin, S.</strong>, Kim, D., Wallraven, C. (2022). <em>Contextual modulation of affect: Comparing humans and deep neural networks.</em> Companion Publication of the 2022 International Conference on Multimodal Interaction (ICMI).
-    </li>
-  </ul>
-</section>
-
+      <h2>Publications</h2>
+      <ul>
+        <li>
+          Azizi, N., Chandra, S., <strong>Shin, S.</strong>, Rajan, A., et al. (2024). <em>Development of robot-assisted speech-language therapy: Co-design with speech-language pathologists.</em> ICSR 2024.
+        </li>
+        <li>
+          Kwon, Y., <strong>Shin, S.</strong>, Yang, K., et al. (2023). <em>Heterogeneous robot-assisted services in isolation wards.</em> IROS 2023.
+        </li>
+        <li>
+          <strong>Shin, S.</strong>, Kwak, S. S. (2023). <em>Do hierarchies in a robot team impact user evaluations?</em> IROS 2023.
+        </li>
+        <li>
+          <strong>Shin, S.</strong>, Kang, D., Kwak, S. S. (2023). <em>Is a robot trustworthy enough to delegate control?</em> RO-MAN 2023.
+        </li>
+        <li>
+          <strong>Shin, S.</strong>, Kim, D., Wallraven, C. (2022). <em>Contextual modulation of affect.</em> ICMI 2022.
+        </li>
+      </ul>
+    </section>
 
     <section id="contact">
       <h2>Contact</h2>
-      <p>Email me at <a href="mailto:soomin.shin@uwaterloo.ca">soomin.shin@uwaterloo.ca</a></p>
+      <p>
+        📧 Email: <a href="mailto:soomin.shin@uwaterloo.ca">soomin.shin@uwaterloo.ca</a><br />
+        🐙 GitHub: <a href="https://github.com/soominimini" target="_blank">github.com/soominimini</a>
+      </p>
     </section>
   </main>
 </body>
