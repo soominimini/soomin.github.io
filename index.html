@@ -4,8 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Soomin Shin</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8f9fa;
+      --text-primary: #1a1a1a;
+      --text-secondary: #6b7280;
+      --accent: #3b82f6;
+      --border: #e5e7eb;
+      --card-bg: #ffffff;
+      --hover-bg: #f8f9fa;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -14,171 +25,410 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif;
-      display: flex;
-      min-height: 100vh;
-      background-color: #ffffff;
-      color: #111111;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      font-weight: 400;
     }
 
-    nav {
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 200px;
-      height: 100%;
-      padding: 2rem 1rem;
-      border-right: 1px solid #ddd;
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Header */
+    header {
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 3rem;
+    }
+
+    .header-content {
       display: flex;
-      flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      text-align: center;
     }
 
-    nav img {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
+    .profile-section {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .profile-image {
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
-      margin-bottom: 1rem;
+      object-fit: cover;
     }
 
-    nav h1 {
+    .profile-info h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .profile-info p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-primary);
+    }
+
+    /* Search */
+    .search-container {
+      margin-bottom: 3rem;
+    }
+
+    .search-box {
+      width: 100%;
+      max-width: 500px;
+      padding: 1rem 1.5rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-primary);
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .search-box:focus {
+      border-color: var(--accent);
+    }
+
+    .search-box::placeholder {
+      color: var(--text-secondary);
+    }
+
+    /* Main Content */
+    main {
+      padding-bottom: 4rem;
+    }
+
+    .section {
+      margin-bottom: 4rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      color: var(--text-primary);
+    }
+
+    /* Cards */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      transition: all 0.2s ease;
+    }
+
+    .card:hover {
+      background: var(--hover-bg);
+      transform: translateY(-2px);
+    }
+
+    .card h3 {
       font-size: 1.25rem;
       font-weight: 600;
       margin-bottom: 1rem;
+      color: var(--text-primary);
     }
 
-    nav a {
-      display: block;
-      margin: 0.5rem 0;
-      font-size: 0.9rem;
-      color: #333;
+    .card p {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    .card-link {
+      color: var(--accent);
       text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.2s ease;
     }
 
-    nav a:hover {
-      text-decoration: underline;
+    .card-link:hover {
+      opacity: 0.8;
     }
 
-    main {
-      margin-left: 200px;
-      padding: 3rem;
-      width: 100%;
-      max-width: 800px;
+    /* Publications */
+    .publication-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      transition: all 0.2s ease;
     }
 
-    section {
-      margin-bottom: 5rem;
+    .publication-item:hover {
+      background: var(--hover-bg);
     }
 
-    h2 {
-      font-size: 1.5rem;
+    .publication-authors {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .publication-title {
       font-weight: 600;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
     }
 
-    p, li {
-      font-size: 1rem;
-      line-height: 1.6;
-      margin-bottom: 1rem;
+    .publication-venue {
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+
+    /* Contact */
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-secondary);
+    }
+
+    .contact-item a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .contact-item a:hover {
+      opacity: 0.8;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .container {
+        padding: 0 1rem;
+      }
+
+      .card {
+        padding: 1.5rem;
+      }
+    }
+
+    /* Filter buttons */
+    .filter-buttons {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 0.5rem 1rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 0.9rem;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--accent);
+      color: var(--text-primary);
+      border-color: var(--accent);
     }
   </style>
 </head>
 <body>
-  <nav>
-    <div>
-      <img src="images/profile.jpg" alt="Soomin Shin">
-      <h1>Soomin Shin</h1>
-      <a href="#about">About Me</a>
-      <a href="#projects">Projects</a>
-      <a href="#experiences">Previous Projects</a>
-      <a href="#publications">Publications</a>
-      <a href="#contact">Contact</a>
-      <a href="Resume.pdf" target="_blank">CV</a>
-    </div>
-    <small>&copy; 2025 Soomin Shin</small>
-  </nav>
+  <div class="container">
+    <header>
+      <div class="header-content">
+        <div class="profile-section">
+          <img src="images/profile.jpg" alt="Soomin Shin" class="profile-image">
+          <div class="profile-info">
+            <h1>Soomin Shin</h1>
+            <p>PhD Candidate • Social and Intelligent Robotics Research Lab • University of Waterloo</p>
+          </div>
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="Resume.pdf" target="_blank">CV</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-  <main>
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    I’m Soomin Shin, a Ph.D. candidate in Electrical and Computer Engineering at the University of Waterloo, advised by Professor Kerstin Dautenhahn. I am a member of the <a href="https://uwaterloo.ca/social-intelligent-robotics-research-lab/" target="_blank">Social and Intelligent Robotics Research Lab</a>, where I explore how Human-Robot Interaction (HRI), socially assistive robotics, and large language models (LLMs) can come together to create intelligent, user-centered systems for real-world therapy and education.
-  </p>
-  <p>
-    My ultimate research goal is bringing robotic agents into our daily lives so they can be used as easily as laptops and smartphones without any technical help from experts. In this sense, I lead a project developing therapeutic robots that integrate therapy-focused games in collaboration with SLPs from Kickstart Therapy. The purpose of this project is integrating robots into the therapy setting so SLPs can use our system as they would use tablets during their regular sessions.
-  </p>
-  <p>
-    On top of this project, I am currently working on integrating LLMs into our system to enhance adaptability! The current system can only provide fixed interactions, e.g., fixed robot speech, gestures, and even fixed game interactions. However, thanks to LLMs, we can now make the robot conduct new interactions during real-time engagement that have never been done before. This would make our system more sustainable since it can evolve with the user as time goes by.
-  </p>
-  <p>
-  Also, prior to my Ph.D., I conducted research on contextual affect modeling at Korea University, comparing human emotion perception with CNN-based models—work that was presented at ACM ICMI. I'm passionate about building AI systems that are not only intelligent, but also empathetic and collaborative. 
-  </p>
-</section>
+    <main>
+      <section id="about" class="section">
+        <h2 class="section-title">About Me</h2>
+        <div class="card">
+          <p>
+            I'm Soomin Shin, a Ph.D. candidate in Electrical and Computer Engineering at the University of Waterloo, advised by Professor Kerstin Dautenhahn. I am a member of the <a href="https://uwaterloo.ca/social-intelligent-robotics-research-lab/" target="_blank" class="card-link">Social and Intelligent Robotics Research Lab</a>, where I explore how Human-Robot Interaction (HRI), socially assistive robotics, and large language models (LLMs) can come together to create intelligent, user-centered systems for real-world therapy and education.
+          </p>
+          <p>
+            My ultimate research goal is bringing robotic agents into our daily lives so they can be used as easily as laptops and smartphones without any technical help from experts. In this sense, I lead a project developing therapeutic robots that integrate therapy-focused games in collaboration with SLPs from Kickstart Therapy. The purpose of this project is integrating robots into the therapy setting so SLPs can use our system as they would use tablets during their regular sessions.
+          </p>
+          <p>
+            On top of this project, I am currently working on integrating LLMs into our system to enhance adaptability! The current system can only provide fixed interactions, e.g., fixed robot speech, gestures, and even fixed game interactions. However, thanks to LLMs, we can now make the robot conduct new interactions during real-time engagement that have never been done before. This would make our system more sustainable since it can evolve with the user as time goes by.
+          </p>
+          <p>
+            Also, prior to my Ph.D., I conducted research on contextual affect modeling at Korea University, comparing human emotion perception with CNN-based models—work that was presented at ACM ICMI. I'm passionate about building AI systems that are not only intelligent, but also empathetic and collaborative.
+          </p>
+        </div>
+      </section>
 
+      <section id="projects" class="section">
+        <h2 class="section-title">Research Projects</h2>
+        <div class="card">
+          <h3>LLM-driven Therapy Robot System</h3>
+          <p>A scalable robot system that can autonomously adjust its system under therapist guidance in real-world settings.</p>
+          <a href="LLM_robot.html" target="_blank" class="card-link">View more →</a>
+        </div>
+        <div class="card">
+          <h3>Co-designed Speech Therapy Games</h3>
+          <p>A robot system that can be utilized by non-technical users in real-world clinical settings.</p>
+          <a href="therapy-games.html" target="_blank" class="card-link">View more →</a>
+        </div>
+        <div class="card">
+          <h3>Multi-Agent Robot Trust Studies</h3>
+          <p>Exploring how perceived robot hierarchies affect human trust in medical settings.</p>
+          <a href="robot-trust-study.html" target="_blank" class="card-link">View more →</a>
+        </div>
+        <div class="card">
+          <h3>Contextual Emotion Recognition</h3>
+          <p>Comparison study on human perception vs. CNN-based contextual emotion recognition model.</p>
+          <a href="contextual-affect-recognition.html" target="_blank" class="card-link">View more →</a>
+        </div>
+      </section>
 
-    <section id="projects">
-      <h2>Research Projects</h2>
-      <ul>
-        <li>
-          <strong>LLM-driven Therapy Robot System</strong> – A customizable robot system using RAG and LLMs for real-time therapist-driven adaptation.
-          <a href="LLM_robot.html" target="_blank">[View more]</a>
-        </li>
-<li>
-  <strong>Co-designed Speech Therapy Games</strong>  
-  – Robot-embedded therapeutic games co-developed with SLPs.
-  <a href="therapy-games.html" target="_blank">[View more]</a>
-</li>
+      <section id="experiences" class="section">
+        <h2 class="section-title">Research Experiences</h2>
+        <div class="card">
+          <h3>Empathy Toward Robots</h3>
+          <p>How people express empathy to robots in social scenarios using Vector.</p>
+          <a href="empathy-robots.html" target="_blank" class="card-link">View more →</a>
+        </div>
+      </section>
 
-        <li>
-          <strong>Multi-Agent Robot Trust Studies</strong> – Exploring how perceived robot hierarchies affect human trust in medical settings. <a href="robot-trust-study.html" target="_blank">[View more]</a>
-        </li>
-        <li>
-          <strong>Contextual Emotion Recognition</strong> – Comparison study on human perception vs. CNN-based contextual emotion recognition model. <a href="contextual-affect-recognition.html" target="_blank">[View more]</a>
-        </li>
-      </ul>
-    </section>
+      <section id="publications" class="section">
+        <h2 class="section-title">Publications</h2>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="hri">HRI</button>
+          <button class="filter-btn" data-filter="affective_computing">Affective Computing</button>
+        </div>
+        <div class="publication-item" data-category="hri">
+          <div class="publication-authors"><strong>Shin, S.</strong>, Chandra, S., Rajan, A., et al.</div>
+          <div class="publication-title">How Co-design and Personas can Inform Game Implementation for Robot-assisted Speech Therapy in Clinical Settings</div>
+          <div class="publication-venue">RO-MAN 2025</div>
+        </div>
+        <div class="publication-item" data-category="hri">
+          <div class="publication-authors">Azizi, N., Chandra, S., <strong>Shin, S.</strong>, Rajan, A., et al.</div>
+          <div class="publication-title">Development of Robot-Assisted Speech-Language Therapy: Co-design with Speech-Language Pathologists</div>
+          <div class="publication-venue">ICSR 2024</div>
+        </div>
+        <div class="publication-item" data-category="hri">
+          <div class="publication-authors">Kwon, Y., <strong>Shin, S.</strong>, Yang, K., et al.</div>
+          <div class="publication-title">Heterogeneous robot-assisted services in isolation wards: a system development and usability study</div>
+          <div class="publication-venue">IROS 2023</div>
+        </div>
+        <div class="publication-item" data-category="hri">
+          <div class="publication-authors"><strong>Shin, S.</strong>, Kwak, S. S.</div>
+          <div class="publication-title">Do Hierarchies in a Robot Team Impact the Service Evaluation by Users?</div>
+          <div class="publication-venue">IROS 2023</div>
+        </div>
+        <div class="publication-item" data-category="hri">
+          <div class="publication-authors"><strong>Shin, S.</strong>, Kang, D., Kwak, S. S.</div>
+          <div class="publication-title">Is a Robot Trustworthy Enough to Delegate Your Control?</div>
+          <div class="publication-venue">RO-MAN 2023</div>
+        </div>
+        <div class="publication-item" data-category="affective_computing">
+          <div class="publication-authors"><strong>Shin, S.</strong>, Kim, D., Wallraven, C.</div>
+          <div class="publication-title">Contextual modulation of affect: Comparing humans and deep neural networks</div>
+          <div class="publication-venue">ICMI 2022</div>
+        </div>
+      </section>
 
-    <section id="experiences">
-      <h2>Research Experiences</h2>
-      <ul>
-        <li>
-         <strong>Empathy Toward Robots</strong> – How people express empathy to robots in social scenarios using Vector. <a href="empathy-robots.html" target="_blank">[View more]</a>
- 
-        </li>
-      </ul>
-    </section>
+      <section id="contact" class="section">
+        <h2 class="section-title">Contact</h2>
+        <div class="card">
+          <div class="contact-info">
+            <div class="contact-item">
+               <a href="mailto:soomin.shin@uwaterloo.ca">soomin.shin@uwaterloo.ca</a>
+            </div>
+            <div class="contact-item">
+               <a href="https://github.com/soominimini" target="_blank">github.com/soominimini</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
 
-    <section id="publications">
-      <h2>Publications</h2>
-      <ul>
-        <li>
-          Azizi, N., Chandra, S., <strong>Shin, S.</strong>, Rajan, A., et al. (2024). <em>Development of robot-assisted speech-language therapy: Co-design with speech-language pathologists.</em> ICSR 2024.
-        </li>
-        <li>
-          Kwon, Y., <strong>Shin, S.</strong>, Yang, K., et al. (2023). <em>Heterogeneous robot-assisted services in isolation wards.</em> IROS 2023.
-        </li>
-        <li>
-          <strong>Shin, S.</strong>, Kwak, S. S. (2023). <em>Do hierarchies in a robot team impact user evaluations?</em> IROS 2023.
-        </li>
-        <li>
-          <strong>Shin, S.</strong>, Kang, D., Kwak, S. S. (2023). <em>Is a robot trustworthy enough to delegate control?</em> RO-MAN 2023.
-        </li>
-        <li>
-          <strong>Shin, S.</strong>, Kim, D., Wallraven, C. (2022). <em>Contextual modulation of affect.</em> ICMI 2022.
-        </li>
-      </ul>
-    </section>
+  <script>
+    // Filter functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const publicationItems = document.querySelectorAll('.publication-item');
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>
-        📧 Email: <a href="mailto:soomin.shin@uwaterloo.ca">soomin.shin@uwaterloo.ca</a><br />
-        🐙 GitHub: <a href="https://github.com/soominimini" target="_blank">github.com/soominimini</a>
-      </p>
-    </section>
-  </main>
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.getAttribute('data-filter');
+        
+        // Update active button
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        
+        // Filter publications
+        publicationItems.forEach(item => {
+          if (filter === 'all' || item.getAttribute('data-category') === filter) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
