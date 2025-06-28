@@ -172,6 +172,20 @@
       opacity: 0.8;
     }
 
+    /* Citation links */
+    .citation-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.2s ease;
+      cursor: pointer;
+    }
+
+    .citation-link:hover {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+
     /* Publications */
     .publication-item {
       background: var(--card-bg);
@@ -201,6 +215,17 @@
     .publication-venue {
       color: var(--accent);
       font-size: 0.9rem;
+    }
+
+    .publication-link {
+      color: var(--accent);
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .publication-link:hover {
+      opacity: 0.8;
+      text-decoration: underline;
     }
 
     /* Contact */
@@ -284,7 +309,7 @@
           <img src="images/profile.jpg" alt="Soomin Shin" class="profile-image">
           <div class="profile-info">
             <h1>Soomin Shin</h1>
-            <p>PhD Candidate • Social and Intelligent Robotics Research Lab • University of Waterloo</p>
+            <p>Ph.D. Candidate in Human-Robot Interaction | Specializing in Scalable and Deployable Social Robots</p>
           </div>
         </div>
         <nav>
@@ -323,22 +348,36 @@
         <div class="card">
           <h3>LLM-driven Therapy Robot System</h3>
           <p>A scalable robot system that can autonomously adjust its system under therapist guidance in real-world settings.</p>
-          <a href="LLM_robot.html" target="_blank" class="card-link">View more →</a>
+          <div class="technologies">
+            <strong>Skills and Technologies:</strong> Pytorch, Ollama, ROS, Nvidia ASR
+          </div>
+          <a href="LLM_robot.html" class="card-link">View more →</a>
         </div>
         <div class="card">
-          <h3>Co-designed Speech Therapy Games</h3>
+          <h3>Co-designed Robot System for Clinical Settings <a href="#publications" class="citation-link">[1,2]</a></h3>
           <p>A robot system that can be utilized by non-technical users in real-world clinical settings.</p>
-          <a href="therapy-games.html" target="_blank" class="card-link">View more →</a>
+          <div class="technologies">
+            <strong>Skills and Technologies:</strong> Python, ROS, UX Design
+          </div>
+          <a href="therapy-games.html" class="card-link">View more →</a>
         </div>
         <div class="card">
-          <h3>Multi-Agent Robot Trust Studies</h3>
-          <p>Exploring how perceived robot hierarchies affect human trust in medical settings.</p>
-          <a href="robot-trust-study.html" target="_blank" class="card-link">View more →</a>
+          <h3>Robotic Assistance System for Hospital Isolation Wards <a href="#publications" class="citation-link">[3]</a></h3>
+          <p>Developing a system of heterogeneous robots to reduce the workload and infection risk for medical staff in hospital isolation wards.</p>
+          <div class="technologies">
+            <strong>Skills and Technologies:</strong> Python, C++, OpenCV, PyTorch/TensorFlow, ROS
+          </div>
+          <a href="LLM_robot.html" class="card-link">View more →</a>
+        </div>
+        <div class="card">
+          <h3>Multi-Agent Robot Trust Studies <a href="#publications" class="citation-link">[4]</a></h3>
+          <p>Exploring how perceived hierarchies between robots affect human trust levels.</p>
+          <a href="robot-trust-study.html" class="card-link">View more →</a>
         </div>
         <div class="card">
           <h3>Contextual Emotion Recognition</h3>
           <p>Comparison study on human perception vs. CNN-based contextual emotion recognition model.</p>
-          <a href="contextual-affect-recognition.html" target="_blank" class="card-link">View more →</a>
+          <a href="contextual-affect-recognition.html" class="card-link">View more →</a>
         </div>
       </section>
 
@@ -347,7 +386,7 @@
         <div class="card">
           <h3>Empathy Toward Robots</h3>
           <p>How people express empathy to robots in social scenarios using Vector.</p>
-          <a href="empathy-robots.html" target="_blank" class="card-link">View more →</a>
+          <a href="empathy-robots.html" class="card-link">View more →</a>
         </div>
       </section>
 
@@ -360,33 +399,33 @@
         </div>
         <div class="publication-item" data-category="hri">
           <div class="publication-authors"><strong>Shin, S.</strong>, Chandra, S., Rajan, A., et al.</div>
-          <div class="publication-title">How Co-design and Personas can Inform Game Implementation for Robot-assisted Speech Therapy in Clinical Settings</div>
+          <div class="publication-title">[1] How Co-design and Personas can Inform Game Implementation for Robot-assisted Speech Therapy in Clinical Settings</div>
           <div class="publication-venue">RO-MAN 2025</div>
         </div>
         <div class="publication-item" data-category="hri">
           <div class="publication-authors">Azizi, N., Chandra, S., <strong>Shin, S.</strong>, Rajan, A., et al.</div>
-          <div class="publication-title">Development of Robot-Assisted Speech-Language Therapy: Co-design with Speech-Language Pathologists</div>
-          <div class="publication-venue">ICSR 2024</div>
+          <div class="publication-title">[2] Development of Robot-Assisted Speech-Language Therapy: Co-design with Speech-Language Pathologists</div>
+          <div class="publication-venue">ICSR 2024 • <a href="https://link.springer.com/chapter/10.1007/978-981-96-3522-1_32" target="_blank" class="publication-link">Springer Link</a></div>
         </div>
         <div class="publication-item" data-category="hri">
           <div class="publication-authors">Kwon, Y., <strong>Shin, S.</strong>, Yang, K., et al.</div>
-          <div class="publication-title">Heterogeneous robot-assisted services in isolation wards: a system development and usability study</div>
-          <div class="publication-venue">IROS 2023</div>
+          <div class="publication-title">[3] Heterogeneous robot-assisted services in isolation wards: a system development and usability study</div>
+          <div class="publication-venue">IROS 2023 • <a href="https://ieeexplore.ieee.org/document/10341857" target="_blank" class="publication-link">IEEE Link</a></div>
         </div>
         <div class="publication-item" data-category="hri">
           <div class="publication-authors"><strong>Shin, S.</strong>, Kwak, S. S.</div>
-          <div class="publication-title">Do Hierarchies in a Robot Team Impact the Service Evaluation by Users?</div>
-          <div class="publication-venue">IROS 2023</div>
+          <div class="publication-title">[4] Do Hierarchies in a Robot Team Impact the Service Evaluation by Users?</div>
+          <div class="publication-venue">IROS 2023 • <a href="https://ieeexplore.ieee.org/document/10341364" target="_blank" class="publication-link">IEEE Link</a></div>
         </div>
         <div class="publication-item" data-category="hri">
           <div class="publication-authors"><strong>Shin, S.</strong>, Kang, D., Kwak, S. S.</div>
-          <div class="publication-title">Is a Robot Trustworthy Enough to Delegate Your Control?</div>
-          <div class="publication-venue">RO-MAN 2023</div>
+          <div class="publication-title">[5] Is a Robot Trustworthy Enough to Delegate Your Control?</div>
+          <div class="publication-venue">RO-MAN 2023 • <a href="https://ieeexplore.ieee.org/document/10309515" target="_blank" class="publication-link">IEEE Link</a></div>
         </div>
         <div class="publication-item" data-category="affective_computing">
           <div class="publication-authors"><strong>Shin, S.</strong>, Kim, D., Wallraven, C.</div>
-          <div class="publication-title">Contextual modulation of affect: Comparing humans and deep neural networks</div>
-          <div class="publication-venue">ICMI 2022</div>
+          <div class="publication-title">[6] Contextual modulation of affect: Comparing humans and deep neural networks</div>
+          <div class="publication-venue">ICMI 2022 • <a href="https://dl.acm.org/doi/10.1145/3536220.3558036" target="_blank" class="publication-link">ACM Link</a></div>
         </div>
       </section>
 
