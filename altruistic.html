@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Can virtual agents learn an altruistic behavior?</title>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+	<style>
+		body {
+			font-family: 'Inter', sans-serif;
+			margin: 2rem auto;
+			max-width: 700px;
+			padding: 0 1rem;
+			line-height: 1.7;
+			color: #111;
+		}
+
+		h1 {
+			font-size: 2rem;
+			font-weight: 600;
+			margin-bottom: 1rem;
+		}
+
+		a {
+			color: #0056b3;
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	<h1>Can virtual agents learn an altruistic behavior?</h1>
+
+	<p>
+		<strong>Summary</strong>
+		<br>
+		This study explores the development of artificial agents capable of mimicking altruistic behaviors observed in nature, specifically food sharing. Using computational algorithms and reinforcement learning, virtual agents are designed to replicate behaviors that animals, like rats and chimpanzees, demonstrate when sharing food for mutual benefit. The research highlights how these agents, through reinforcement learning, learn to engage in altruistic acts when it enhances long-term self-interest.
+	</p>
+	<p>
+		The study concludes that artificial agents can effectively imitate altruistic behaviors under certain conditions, and that the frequency of sharing behaviors depends on factors like the agent's ability to store food. The findings suggest that such behaviors can be programmed into robots, potentially improving human-robot interactions by fostering trust and cooperation.
+	</p>
+
+	<div style="position: relative; display: flex; flex-direction: row; ">
+		<video controls autoplay muted style="width: 40%;">
+			<source src="images/my/p9/cat_racoon.mp4" type="video/mp4"> 
+		</video>
+		<video controls autoplay muted style="width: 50%; margin-left: 5%;">
+			<source src="images/my/p9/share_.mp4" type="video/mp4" > 
+		</video>
+	</div>
+
+	<p>
+		<strong>Logic of eating, sharing algorithm</strong>
+		<br>
+		The study implemented three different models to understand how virtual agents can learn altruistic behaviors:
+	</p>
+	<img src="images/my/p9/basic_model.png" alt="Basic model" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+	<div class="caption">Basic model</div>
+	<img src="images/my/p9/share_model.png" alt="Share model" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+	<div class="caption">Share model</div>
+	<img src="images/my/p9/integrated_model.png" alt="Integrated model" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+	<div class="caption">Integrated model</div>
+
+	<p>
+		<strong>Results</strong>
+		<br>
+		Agents with larger inventory capacities tend to share less frequently, as they are able to store surplus food, reducing the immediate need for reciprocal sharing. However, when programmed to share food based on the hunger levels of other agents, the virtual agents exhibited consistent altruistic behaviors, particularly when mutual benefits were assured. The frequency of sharing behavior increased over time, especially when agents could assess the needs of others, indicating that the agents learned to balance self-interest with altruistic actions effectively.
+	</p>
+	<div style="position: relative; display: flex; flex-direction: row; ">
+		<p style="font-size: 20px; width: 50%;">
+			The study demonstrates that artificial agents can effectively learn altruistic behaviors through reinforcement learning, particularly when mutual benefits are clear and the environment supports cooperative interactions.
+		</p>
+		<img style="width: 40%;" src="images/my/p9/result.png">
+	</div>
+
+	<div style="position: relative; display: flex; flex-direction: row; ">
+		<video controls autoplay muted style="width: 40%;">
+			<source src="images/my/p9/not_consume_.mp4" type="video/mp4"> 
+		</video>
+		<video controls autoplay muted style="width: 40%;">
+			<source src="images/my/p9/share_.mp4" type="video/mp4"> 
+		</video>
+	</div>
+	<div style="position: relative; display: flex; flex-direction: row; ">
+		<video controls autoplay muted style="width: 40%;">
+			<source src="images/my/p9/greedy.mp4" type="video/mp4"> 
+		</video>
+	</div>
+
+	<p>
+		<strong>Code and Documentation</strong>
+		<br>
+		Code is available here: <a href="https://github.com/soominimini/virtual_agent">https://github.com/soominimini/virtual_agent</a>
+	</p>
+
+	<embed src="images/my/p9/EI_report.pdf" width="100%" height="600px" type="application/pdf">
+
+	<p>
+		<a href="index.html">← Back to main site</a>
+	</p>
+</body>
+</html>
