@@ -8,7 +8,7 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-
+ 
     body {
       background: #ffffff;
       color: #111;
@@ -17,10 +17,10 @@
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
     }
-
+ 
     a { color: #0056b3; text-decoration: none; }
     a:hover { text-decoration: underline; }
-
+ 
     /* NAV */
     nav {
       background: #1a1a2e;
@@ -33,10 +33,10 @@
     }
     nav a { color: #ffffff; font-weight: 500; }
     nav .sep { color: rgba(255,255,255,0.3); }
-
+ 
     /* WRAPPER */
     .wrapper { max-width: 700px; margin: 0 auto; padding: 0 1.5rem; }
-
+ 
     /* HERO */
     .hero {
       padding: 3rem 0 2rem;
@@ -74,13 +74,13 @@
       border-radius: 3px;
       border: 1px solid #d0ddf5;
     }
-
+ 
     /* STATS */
     .stats {
       background: #1a1a2e;
       color: #fff;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       margin-bottom: 3rem;
     }
     .stat {
@@ -103,7 +103,7 @@
       text-transform: uppercase;
       color: rgba(255,255,255,0.45);
     }
-
+ 
     /* SECTIONS */
     .section { margin-bottom: 2.75rem; }
     .section-label {
@@ -124,7 +124,7 @@
       display: inline-block;
     }
     p { font-size: 0.975rem; color: #333; margin-bottom: 0.85rem; }
-
+ 
     /* IMAGE */
     .img-block { margin: 1.5rem 0; border: 1px solid #e5e5e5; overflow: hidden; }
     .img-block img { width: 100%; display: block; object-fit: cover; }
@@ -135,7 +135,7 @@
       background: #fafafa;
       border-top: 1px solid #e5e5e5;
     }
-
+ 
     /* TIMELINE */
     .timeline {
       margin: 1.25rem 0;
@@ -152,7 +152,7 @@
       margin-bottom: 0.2rem;
     }
     .tl-text { font-size: 0.925rem; color: #444; margin: 0; }
-
+ 
     /* FINDINGS */
     .findings-grid {
       display: grid;
@@ -174,7 +174,44 @@
       margin-bottom: 0.45rem;
     }
     .finding-text { font-size: 0.875rem; color: #444; margin: 0; line-height: 1.6; }
-
+ 
+    /* FINDING VARIANTS */
+    .finding-card.positive { border-color: #c3e6cb; background: #f6fff8; }
+    .finding-card.challenge { border-color: #f5c6cb; background: #fff8f8; }
+    .finding-positive { color: #1a6b35; }
+    .finding-challenge { color: #842029; }
+ 
+    /* SLP QUOTES */
+    .slp-quotes { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.85rem; }
+    .slp-quote {
+      border: 1px solid #e5e5e5;
+      background: #fafafa;
+      padding: 1rem 1rem 1rem 1.25rem;
+      position: relative;
+    }
+    .quote-mark {
+      font-size: 2.5rem;
+      line-height: 1;
+      color: #d0ddf5;
+      font-family: Georgia, serif;
+      position: absolute;
+      top: 0.5rem;
+      left: 0.85rem;
+    }
+    .quote-text {
+      font-size: 0.9rem;
+      color: #333;
+      font-style: italic;
+      margin: 0 0 0.35rem 1.5rem;
+      line-height: 1.65;
+    }
+    .quote-attr {
+      font-size: 0.75rem;
+      color: #888;
+      font-weight: 500;
+      margin: 0 0 0 1.5rem;
+    }
+ 
     /* BRIDGE */
     .bridge {
       background: #f0f4ff;
@@ -191,12 +228,12 @@
       margin-bottom: 0.5rem;
     }
     .bridge p { color: #1a3a6e; margin: 0; font-size: 0.925rem; }
-
+ 
     /* VIDEOS */
     .video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.25rem; }
     .video-wrap video { width: 100%; display: block; background: #111; }
     .video-label { font-size: 0.75rem; color: #777; margin-top: 0.35rem; }
-
+ 
     /* TECH */
     .tech-stack { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.85rem; }
     .tech-chip {
@@ -208,7 +245,7 @@
       padding: 0.25rem 0.65rem;
       border-radius: 3px;
     }
-
+ 
     /* GITHUB */
     .github-link {
       display: inline-flex;
@@ -224,13 +261,12 @@
       transition: background 0.15s;
     }
     .github-link:hover { background: #0056b3; text-decoration: none; }
-
+ 
     hr.divider { border: none; border-top: 1px solid #e5e5e5; margin: 2.5rem 0; }
-
+ 
     @media (max-width: 560px) {
       h1 { font-size: 1.4rem; }
-      .stats { grid-template-columns: repeat(2, 1fr); }
-      .stat:nth-child(2) { border-right: none; }
+      .stats { grid-template-columns: repeat(3, 1fr); }
       .findings-grid { grid-template-columns: 1fr; }
       .video-grid { grid-template-columns: 1fr; }
     }
