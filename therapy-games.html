@@ -3,68 +3,405 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Co-designed Speech Therapy Games</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <title>6-Month In-the-Wild Deployment | Soomin Shin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: 'Inter', sans-serif;
-      margin: 2rem auto;
-      max-width: 700px;
-      padding: 0 1rem;
-      line-height: 1.7;
+      background: #ffffff;
       color: #111;
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
     }
 
-    h1 {
-      font-size: 2rem;
+    a { color: #0056b3; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* NAV */
+    nav {
+      background: #1a1a2e;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.6);
+    }
+    nav a { color: #ffffff; font-weight: 500; }
+    nav .sep { color: rgba(255,255,255,0.3); }
+
+    /* WRAPPER */
+    .wrapper { max-width: 700px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* HERO */
+    .hero {
+      padding: 3rem 0 2rem;
+      border-bottom: 1px solid #e5e5e5;
+      margin-bottom: 2.5rem;
+    }
+    .case-label {
+      font-size: 0.72rem;
       font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #0056b3;
+      margin-bottom: 0.75rem;
+    }
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      line-height: 1.3;
+      color: #111;
       margin-bottom: 1rem;
     }
-
-    a {
+    .hero-sub {
+      font-size: 1rem;
+      color: #555;
+      max-width: 580px;
+      margin-bottom: 1.5rem;
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .tag {
+      background: #f0f4ff;
       color: #0056b3;
-      text-decoration: none;
+      font-size: 0.72rem;
+      font-weight: 500;
+      padding: 0.25rem 0.65rem;
+      border-radius: 3px;
+      border: 1px solid #d0ddf5;
     }
 
-    a:hover {
-      text-decoration: underline;
+    /* STATS */
+    .stats {
+      background: #1a1a2e;
+      color: #fff;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-bottom: 3rem;
+    }
+    .stat {
+      padding: 1.5rem 1rem;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+    .stat:last-child { border-right: none; }
+    .stat-num {
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+    .stat-num sup { font-size: 0.9rem; font-weight: 400; color: #7eaaff; }
+    .stat-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+    }
+
+    /* SECTIONS */
+    .section { margin-bottom: 2.75rem; }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 0.4rem;
+    }
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 0.85rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid #0056b3;
+      display: inline-block;
+    }
+    p { font-size: 0.975rem; color: #333; margin-bottom: 0.85rem; }
+
+    /* IMAGE */
+    .img-block { margin: 1.5rem 0; border: 1px solid #e5e5e5; overflow: hidden; }
+    .img-block img { width: 100%; display: block; object-fit: cover; }
+    .img-caption {
+      padding: 0.6rem 0.85rem;
+      font-size: 0.78rem;
+      color: #777;
+      background: #fafafa;
+      border-top: 1px solid #e5e5e5;
+    }
+
+    /* TIMELINE */
+    .timeline {
+      margin: 1.25rem 0;
+      padding-left: 1.25rem;
+      border-left: 3px solid #0056b3;
+    }
+    .tl-item { margin-bottom: 1.25rem; padding-left: 0.75rem; }
+    .tl-phase {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #0056b3;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.2rem;
+    }
+    .tl-text { font-size: 0.925rem; color: #444; margin: 0; }
+
+    /* FINDINGS */
+    .findings-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+    .finding-card {
+      border: 1px solid #e5e5e5;
+      padding: 1.1rem;
+      background: #fafafa;
+    }
+    .finding-title {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #1a1a2e;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.45rem;
+    }
+    .finding-text { font-size: 0.875rem; color: #444; margin: 0; line-height: 1.6; }
+
+    /* BRIDGE */
+    .bridge {
+      background: #f0f4ff;
+      border-left: 4px solid #0056b3;
+      padding: 1.1rem 1.25rem;
+      margin-top: 1.25rem;
+    }
+    .bridge-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #0056b3;
+      margin-bottom: 0.5rem;
+    }
+    .bridge p { color: #1a3a6e; margin: 0; font-size: 0.925rem; }
+
+    /* VIDEOS */
+    .video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.25rem; }
+    .video-wrap video { width: 100%; display: block; background: #111; }
+    .video-label { font-size: 0.75rem; color: #777; margin-top: 0.35rem; }
+
+    /* TECH */
+    .tech-stack { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.85rem; }
+    .tech-chip {
+      background: #fff;
+      border: 1px solid #ddd;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: #555;
+      padding: 0.25rem 0.65rem;
+      border-radius: 3px;
+    }
+
+    /* GITHUB */
+    .github-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-top: 1.5rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #fff;
+      background: #1a1a2e;
+      padding: 0.55rem 1.1rem;
+      border-radius: 3px;
+      transition: background 0.15s;
+    }
+    .github-link:hover { background: #0056b3; text-decoration: none; }
+
+    hr.divider { border: none; border-top: 1px solid #e5e5e5; margin: 2.5rem 0; }
+
+    @media (max-width: 560px) {
+      h1 { font-size: 1.4rem; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .stat:nth-child(2) { border-right: none; }
+      .findings-grid { grid-template-columns: 1fr; }
+      .video-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <h1>Co-designed Speech Therapy Games</h1>
-  <p>
-    This project involves the design and development of a web-based game system embedded in a QT robot, used in speech-language therapy sessions for children with language impairments. The project is a collaboration with certified Speech-Language Pathologists (SLPs) and was conducted in real-world clinical environments.
-  </p>
-    <img src="images/robot.png" alt="QT robot used in the therapy study">
-  <div class="caption">QT robot used in the therapy game system</div>
 
-  <p>
-    The games were co-designed through iterative feedback sessions, focusing on usability, engagement, and therapeutic relevance. The system allows children to interact with a robot and touchscreen simultaneously, enabling playful but structured therapy tasks that encourage verbal expression.
-  </p>
-    <img src="images/mainpage.png" alt="main page">
-  <div class="caption">Main page of games</div>
+  <nav>
+    <a href="index.html">Soomin Shin</a>
+    <span class="sep">/</span>
+    <span>6-Month In-the-Wild Deployment</span>
+  </nav>
 
-  <p>
-    Technologies used include Flask (backend), ROS (robot middleware), and HTML/CSS, Javascript (frontend). The robot responds with gestures and speech, reinforcing correct actions and encouraging continued participation.
-  </p>
+  <div class="wrapper">
 
-  <h2>Demo Videos</h2>
-  <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
-    <video width="48%" controls>
-      <source src="video/tablet_.mp4" type="video/mp4">
-    </video>
-    <video width="48%" controls>
-      <source src="video/robot_.mp4" type="video/mp4">
-    </video>
+    <header class="hero">
+      <p class="case-label">Case Study</p>
+      <h1>6-Month In-the-Wild Deployment:<br>AI-Assisted Speech Therapy in a Pediatric Clinic</h1>
+      <p class="hero-sub">A real-world study of how clinicians operate, adapt, and experience AI-powered robot interactions in an active pediatric therapy center.</p>
+      <div class="tags">
+        <span class="tag">In-the-Wild HRI</span>
+        <span class="tag">Co-Design</span>
+        <span class="tag">Pediatric Therapy</span>
+      </div>
+    </header>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num">6<sup>mo</sup></div>
+        <div class="stat-label">Continuous Deployment</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">9</div>
+        <div class="stat-label">Children (Ages 3–8)</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Active Therapy Clinic</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">3<sup>yr</sup></div>
+        <div class="stat-label">Co-Design Process</div>
+      </div>
+    </div>
+
+    <section class="section">
+      <p class="section-label">Study Context</p>
+      <h2>Not a lab study. An active clinic.</h2>
+      <p>For 6 continuous months, a socially assistive robot ran in a live pediatric speech therapy center — operated independently by certified Speech-Language Pathologists (SLPs) in real clinical sessions with children with language impairments. No researcher was in the room. Therapists controlled the robot themselves, during actual therapy, with real children.</p>
+      <p>This distinguishes the study from the vast majority of HRI research, which is conducted in controlled lab settings with researcher-operated systems. Here, clinicians were the operators, the evaluators, and the users whose needs ultimately determined whether the system succeeded.</p>
+      <div class="img-block">
+        <img src="images/robot.png" alt="QT robot deployed in the pediatric therapy center" />
+        <div class="img-caption">The QT robot deployed in KickStart Therapy — operated by SLPs during live clinical sessions, no researcher present.</div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <section class="section">
+      <p class="section-label">Deployment Arc</p>
+      <h2>How 6 months unfolded</h2>
+      <p>The deployment was not a single study but a longitudinal progression — each phase surfacing different dimensions of how clinicians relate to AI-powered tools.</p>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-phase">Months 1–2 — Onboarding</div>
+          <p class="tl-text">SLPs learned to operate the system independently. Researcher support present but gradually withdrawn. Focus: can non-technical users actually run this?</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-phase">Months 2–4 — Independent Operation</div>
+          <p class="tl-text">Therapists ran sessions fully autonomously. First signs of "interaction fatigue" emerged — children disengaging from repetitive, pre-scripted AI content.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-phase">Months 4–5 — Adaptation Pressure</div>
+          <p class="tl-text">SLPs began improvising around the system's limitations — workarounds that revealed what therapists actually needed to control. This phase drove the authoring system redesign.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-phase">Month 6 — Synthesis</div>
+          <p class="tl-text">Final data collection, therapist interviews, and system review. Findings directly informed the LLM-powered authoring system currently under development.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <section class="section">
+      <p class="section-label">Design Process</p>
+      <h2>Built with clinicians, not for them</h2>
+      <p>The system emerged from 3 years of co-design with clinical staff — iterative sessions focused on three core questions: <em>What does a therapist need to control? What should the AI decide autonomously? And when does AI-generated content fail the child in the room?</em></p>
+      <p>These sessions revealed that therapists don't think in terms of system parameters — they think in terms of goals for a specific child on a specific day. Designing around this required shifting from feature-based UI to goal-oriented authoring.</p>
+      <div class="img-block">
+        <img src="images/mainpage.png" alt="Therapist-facing game interface" />
+        <div class="img-caption">The therapist-facing interface — designed for independent operation without engineering support. Each game maps to a clinical goal defined by the SLP.</div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <section class="section">
+      <p class="section-label">Key Findings</p>
+      <h2>What the deployment revealed</h2>
+      <p>The deployment surfaced failure modes and design requirements invisible in shorter lab-based studies.</p>
+      <div class="findings-grid">
+        <div class="finding-card">
+          <div class="finding-title">Interaction Fatigue</div>
+          <p class="finding-text">Children disengaged not because of the robot, but because pre-scripted AI content failed to adapt to their evolving goals and familiarity. Novelty decays; content must not.</p>
+        </div>
+        <div class="finding-card">
+          <div class="finding-title">Clinician Mental Models</div>
+          <p class="finding-text">SLPs developed accurate intuitions about when AI content would fail for a specific child — but had no mechanism to act on that knowledge. They needed authoring control, not just operation control.</p>
+        </div>
+        <div class="finding-card">
+          <div class="finding-title">Researcher Dependency as Structural Failure</div>
+          <p class="finding-text">Systems that require researcher involvement to update content cannot scale clinically. Sustainability requires non-technical users to be first-class content authors.</p>
+        </div>
+        <div class="finding-card">
+          <div class="finding-title">Successful Independent Operation</div>
+          <p class="finding-text">After onboarding, therapists successfully operated the robot system in live clinical sessions without engineering support — validating the core usability design.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <section class="section">
+      <p class="section-label">Research Impact</p>
+      <h2>What changed because of this deployment</h2>
+      <p>The findings directly motivated a pivot in research direction. Pre-scripted systems, no matter how well-designed, cannot sustain clinical deployment. The question shifted: <em>how do you give non-technical domain experts authoring control over AI behavior?</em></p>
+      <div class="bridge">
+        <p class="bridge-label">→ Ongoing Work</p>
+        <p>This deployment is the empirical foundation for an LLM-powered authoring system that enables SLPs to generate, customize, and iterate on AI-driven therapy content without researcher or engineering intervention — replacing rigid pre-scripted interactions with clinician-authored, LLM-executed ones.</p>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <section class="section">
+      <p class="section-label">System Demos</p>
+      <h2>The system in action</h2>
+      <p>Two views of the deployed system: the tablet-based therapist interface and the robot in session.</p>
+      <div class="video-grid">
+        <div>
+          <div class="video-wrap"><video controls><source src="video/tablet_.mp4" type="video/mp4"></video></div>
+          <p class="video-label">Therapist-facing tablet interface during a session</p>
+        </div>
+        <div>
+          <div class="video-wrap"><video controls><source src="video/robot_.mp4" type="video/mp4"></video></div>
+          <p class="video-label">QT robot interaction in a live therapy session</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <section class="section">
+      <p class="section-label">Technical Implementation</p>
+      <h2>How it was built</h2>
+      <p>The system was designed for reliability in clinical environments — high uptime, low-latency response, and a therapist interface that required no technical knowledge to operate.</p>
+      <div class="tech-stack">
+        <span class="tech-chip">Flask (backend)</span>
+        <span class="tech-chip">ROS (robot middleware)</span>
+        <span class="tech-chip">HTML / CSS / JavaScript</span>
+        <span class="tech-chip">QT Robot Platform</span>
+        <span class="tech-chip">Tablet-based control interface</span>
+        <span class="tech-chip">Session logging & data collection</span>
+      </div>
+      <a class="github-link" href="https://github.com/soominimini/QT_game_final" target="_blank">
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        View on GitHub
+      </a>
+      <p style="margin-top: 1.5rem;"><a href="index.html">← Back to main site</a></p>
+    </section>
+
   </div>
-
-  <p>
-    📎 GitHub link: <a href="https://github.com/soominimini/QT_game_final" target="_blank">https://github.com/soominimini/QT_game_final</a>
-  </p>
-  <p>
-    <a href="index.html">← Back to main site</a>
-  </p>
-  
 </body>
 </html>
