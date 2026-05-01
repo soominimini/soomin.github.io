@@ -263,7 +263,7 @@
         <span class="badge">Ongoing</span>
       </p>
       <h1>LLM-powered Social Robot System<br>for Non-Technical End-User</h1>
-      <p class="hero-sub">Building an LLM-powered social robot framework that enables non-technical users — such as speech-language pathologists — to author, customize, and control robot interactions without engineering support.</p>
+      <p class="hero-sub">Building an LLM-powered social robot framework that enables non-technical users to author, customize, and control robot interactions without engineering support.</p>
       <div class="tags">
         <span class="tag">LLM Integration</span>
         <span class="tag">End-User Authoring</span>
@@ -276,7 +276,7 @@
 
     <!-- MOTIVATION -->
     <div class="motivation">
-      <strong>Why this work:</strong> A 6-month real-world deployment of a pre-scripted robot system revealed that fixed interactions create "interaction fatigue" — children disengage as content fails to adapt over time. Therapists had no mechanism to update content themselves. This system directly addresses that limitation: replacing rigid, pre-scripted interactions with LLM-generated, clinician-authored ones.
+      <strong>Why this work:</strong> A 6-month real-world deployment of a pre-scripted robot system revealed that fixed interactions create "interaction fatigue" — children disengage as content fails to adapt over time. Therapists had no mechanism to update content themselves. This system directly addresses that limitation: replacing rigid, pre-scripted interactions with LLM-generated, therapist-authored ones.
     </div>
 
     <!-- SECTION 1: WHAT WE'RE BUILDING -->
@@ -287,7 +287,7 @@
         The system integrates large language models into a social robot platform, enabling dynamic, contextually appropriate interactions to be generated in real time. Rather than relying on pre-written scripts, the robot generates responses, stories, and therapy activities on the fly — guided by therapist-defined goals and child-specific parameters.
       </p>
       <p>
-        A central design goal is the therapist-facing authoring dashboard: a UI that allows non-technical clinicians to create, customize, and iterate on LLM-driven interactions without any engineering intervention.
+        A central design goal is the therapist-facing authoring dashboard: a UI that allows non-technical clinicians to create and customize LLM-driven interactions without any engineering intervention.
       </p>
       <div class="img-block">
         <img src="images/llm_pipeline.png" alt="LLM authoring system pipeline diagram showing therapist, LLM authoring system, and socially assistive robot" />
@@ -299,25 +299,25 @@
     <section class="section">
       <p class="section-label">System Architecture</p>
       <h2>Three-layer pipeline</h2>
-      <p>The system is organized into three layers — perception, cognition, and expression — with a Flask-based therapist dashboard that exposes control across all three.</p>
+      <p>The system is organized into three layers — perception, cognition, and expression — with a Flask-based therapist dashboard.</p>
 
       <div class="layers">
         <div class="layer">
           <div class="layer-name">Perception</div>
           <div class="layer-detail">
-            Speech recognition via <code>NVIDIA Riva ASR</code>, voice activity detection via <code>Silero VAD</code>, facial expression recognition via <code>DeepFace</code>, and visual input via <code>Gemini Robotics-ER</code>.
+            Speech recognition via <code>NVIDIA Riva ASR</code>, voice activity detection via <code>Silero VAD</code>, facial expression recognition via <code>DeepFace</code>, and physical object recognition via <code>Gemini Robotics-ER</code>.
           </div>
         </div>
         <div class="layer">
           <div class="layer-name">Cognition</div>
           <div class="layer-detail">
-            LLM-based reasoning using <code>Ollama / LLaMA 3.1</code> with <code>LlamaIndex RAG</code> for therapy-grounded context retrieval, and <code>Gemini 2.5 Flash</code> for content generation.
+            LLM-based reasoning using <code>Ollama / LLaMA 3.1</code> with <code> RAG</code> for therapy-grounded context retrieval for each client, and <code>Gemini 2.5 Flash</code> for content generation.
           </div>
         </div>
         <div class="layer">
           <div class="layer-name">Expression</div>
           <div class="layer-detail">
-            Text-to-speech with prosody and lip-sync, IK-based motion planning, and a gesture and emotion library — all coordinated via <code>ROS</code>.
+            Text-to-speech with prosody and lip-sync, IK-based motion planning, and a gesture and emotion library.
           </div>
         </div>
       </div>
