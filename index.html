@@ -80,16 +80,17 @@
     .news { list-style: none; }
     .news li { display: grid; grid-template-columns: 5.5rem 1fr; gap: 0.75rem; padding: 0.3rem 0; }
     .news-date { color: #0056b3; font-weight: 600; font-size: 0.88rem; padding-top: 0.05rem; }
-    details.more summary {
-      cursor: pointer;
-      color: #0056b3;
-      font-size: 0.88rem;
-      font-weight: 500;
-      margin-top: 0.4rem;
-      list-style: none;
+    .news-scroll {
+      max-height: 15rem;
+      overflow-y: auto;
+      border: 1px solid #ececec;
+      border-radius: 4px;
+      padding: 0.5rem 1rem;
+      scrollbar-width: thin;
+      scrollbar-color: #c5cdd8 transparent;
     }
-    details.more summary::-webkit-details-marker { display: none; }
-    details.more[open] summary { display: none; }
+    .news-scroll::-webkit-scrollbar { width: 6px; }
+    .news-scroll::-webkit-scrollbar-thumb { background: #c5cdd8; border-radius: 3px; }
 
     /* ── RESEARCH ── */
     .research-lead { color: #333; margin-bottom: 1.6rem; }
@@ -187,22 +188,17 @@
     <!-- NEWS -->
     <section id="news">
       <h2>News</h2>
-      <ul class="news">
+      <ul class="news news-scroll" tabindex="0" aria-label="News">
         <li><span class="news-date">2026</span><span>Our journal article on a therapist-operable social robot platform for pediatric speech-language therapy is published in <em>Advanced Robotics</em>.</span></li>
         <li><span class="news-date">Mar 2026</span><span>Received the Physical AI Graduate Scholarship (2026&ndash;2027) from the Waterloo Data and AI Institute. <a href="https://uwaterloo.ca/electrical-computer-engineering/news/electrical-and-computer-engineering-ece-phd-student-soomin">[Waterloo ECE news]</a></span></li>
         <li><span class="news-date">2026</span><span>Selected as an <strong>HRI Pioneer</strong> at ACM/IEEE HRI 2026 (acceptance rate 23%), and served as a student volunteer at HRI 2026.</span></li>
         <li><span class="news-date">2025</span><span>Paper on co-design and personas for robot-assisted speech therapy games published at IEEE RO-MAN 2025.</span></li>
         <li><span class="news-date">2024</span><span>Co-authored paper on co-designing robot-assisted speech-language therapy with SLPs published at ICSR 2024.</span></li>
+        <li><span class="news-date">Sep 2023</span><span>Started my PhD at the University of Waterloo with the International Doctoral Student Award and the Provost's Doctoral Entrance Award for Women.</span></li>
+        <li><span class="news-date">2023</span><span>Two papers at IEEE/RSJ IROS 2023 and one at IEEE RO-MAN 2023 from my research internship at KIST.</span></li>
+        <li><span class="news-date">2023</span><span>Received my M.S. in Brain and Cognitive Engineering from Korea University.</span></li>
+        <li><span class="news-date">2022</span><span>Paper on contextual modulation of affect published at ACM ICMI 2022.</span></li>
       </ul>
-      <details class="more">
-        <summary>Show more &darr;</summary>
-        <ul class="news">
-          <li><span class="news-date">Sep 2023</span><span>Started my PhD at the University of Waterloo with the International Doctoral Student Award and the Provost's Doctoral Entrance Award for Women.</span></li>
-          <li><span class="news-date">2023</span><span>Two papers at IEEE/RSJ IROS 2023 and one at IEEE RO-MAN 2023 from my research internship at KIST.</span></li>
-          <li><span class="news-date">2023</span><span>Received my M.S. in Brain and Cognitive Engineering from Korea University.</span></li>
-          <li><span class="news-date">2022</span><span>Paper on contextual modulation of affect published at ACM ICMI 2022.</span></li>
-        </ul>
-      </details>
     </section>
 
     <!-- RESEARCH -->
