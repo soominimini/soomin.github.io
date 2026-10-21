@@ -69,9 +69,9 @@
     .intro-links a { font-weight: 500; }
     .intro-links .sep { color: #bbb; margin: 0 0.35rem; }
     .intro-photo {
-      width: 190px;
-      height: 215px;
-      border-radius: 50%;
+      width: 250px;
+      aspect-ratio: 7 / 6;
+      border-radius: 10px;
       object-fit: cover;
       flex-shrink: 0;
     }
@@ -133,7 +133,7 @@
     @media (max-width: 680px) {
       .nav-links a { padding: 0.9rem 0.5rem; font-size: 0.8rem; }
       .intro { flex-direction: column-reverse; align-items: center; gap: 1.5rem; }
-      .intro-photo { width: 150px; height: 170px; }
+      .intro-photo { width: 100%; max-width: 320px; }
       .paper { grid-template-columns: 1fr; gap: 0.75rem; }
       .paper-thumb { width: 100%; height: 180px; }
       .news li { grid-template-columns: 4.75rem 1fr; }
@@ -165,13 +165,13 @@
             I am a PhD candidate in the <a href="https://uwaterloo.ca/social-intelligent-robotics-research-lab/">Social and Intelligent Robotics Research Lab (SIRRL)</a> at the University of Waterloo, advised by Prof. Kerstin Dautenhahn.
           </p>
           <p class="body">
-            I study why socially assistive robots rarely survive outside research labs, and how to change that. Over three years of co-design with speech-language therapists and a 6-month in-the-wild deployment with 9 children at a pediatric speech therapy centre, I found the main barrier: every new or updated robot interaction still needs a researcher. I am now building an LLM-powered authoring system that lets therapists create, customize, and iterate on robot interactions themselves, without engineering support.
+            I study why socially assistive robots rarely survive outside research labs, and how to change that. Over 3 years of co-design with speech-language therapists and a longitudinal field study (6-month in-the-wild deployment with 9 children at a pediatric speech therapy centre), I found the main barrier: every new or updated robot interaction still needs a researcher. I am now building an LLM-powered authoring system that lets therapists create, customize, and iterate on robot interactions themselves, without engineering support.
           </p>
           <p class="body">
             Before Waterloo, I received my M.S. in Brain and Cognitive Engineering from Korea University, advised by Prof. Christian Wallraven, where I compared human and deep-network perception of emotion in context. I was also a research intern at KIST, working on multi-robot hospital systems and human-robot trust. I hold a B.E. in Multimedia Engineering and a B.A. in Child Studies from Seoul Women's University.
           </p>
 
-          <p class="keywords"><strong>Research keywords:</strong> human-robot interaction, socially assistive robots, end-user authoring, LLM-powered systems, co-design, in-the-wild deployment</p>
+          <p class="keywords"><strong>Research keywords:</strong> human-robot interaction, socially assistive robots, end-user authoring, Large Multimodal model-powered systems, co-design, longitudinal field deployment</p>
 
           <p class="intro-links">
             <a href="mailto:soomin.shin@uwaterloo.ca">Email</a><span class="sep">/</span>
@@ -181,7 +181,7 @@
             <a href="https://www.linkedin.com/in/soomin-shin-14795a293/">LinkedIn</a>
           </p>
         </div>
-        <img class="intro-photo" src="images/profile.jpg" alt="Soomin Shin" />
+        <img class="intro-photo" src="images/profile_qt.jpg" alt="Soomin Shin with a QTrobot" />
       </div>
     </section>
 
