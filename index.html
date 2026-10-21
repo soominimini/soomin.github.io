@@ -4,17 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Soomin Shin</title>
+  <meta name="description" content="Soomin Shin, PhD candidate in Electrical and Computer Engineering at the University of Waterloo. Human-robot interaction, socially assistive robots, end-user authoring." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 4rem; }
 
     body {
       background: #ffffff;
-      color: #111;
+      color: #222;
       font-family: 'Inter', sans-serif;
-      font-size: 16px;
-      line-height: 1.7;
+      font-size: 15.5px;
+      line-height: 1.65;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -24,7 +25,7 @@
     /* ── NAV ── */
     nav {
       background: #1a1a2e;
-      padding: 0 2rem;
+      padding: 0 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -32,540 +33,287 @@
       top: 0;
       z-index: 100;
     }
-    .nav-name {
-      color: #ffffff;
-      font-weight: 600;
-      font-size: 0.95rem;
-      padding: 1rem 0;
-      text-decoration: none;
-    }
-    .nav-links {
-      display: flex;
-      gap: 0;
-      list-style: none;
-    }
+    .nav-name { color: #fff; font-weight: 600; font-size: 0.95rem; padding: 0.9rem 0; }
+    .nav-name:hover { text-decoration: none; }
+    .nav-links { display: flex; list-style: none; }
     .nav-links a {
-      color: rgba(255,255,255,0.7);
+      color: rgba(255,255,255,0.72);
       font-size: 0.85rem;
       font-weight: 500;
-      padding: 1rem 1rem;
+      padding: 0.9rem 0.8rem;
       display: block;
-      transition: color 0.15s;
     }
-    .nav-links a:hover {
-      color: #ffffff;
-      text-decoration: none;
+    .nav-links a:hover { color: #fff; text-decoration: none; }
+
+    .wrapper { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
+
+    section { padding: 2.75rem 0; border-bottom: 1px solid #ececec; }
+    section:last-of-type { border-bottom: none; }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 1.1rem;
     }
 
-    /* ── WRAPPER ── */
-    .wrapper { max-width: 700px; margin: 0 auto; padding: 0 1.5rem; }
-
-    /* ── HERO / PROFILE ── */
-    .profile {
-      padding: 3.5rem 0 2.5rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 2rem;
-      border-bottom: 1px solid #e5e5e5;
-      margin-bottom: 3rem;
-    }
-    .profile-photo {
-      width: 110px;
-      height: 110px;
+    /* ── INTRODUCTION ── */
+    .intro { display: flex; gap: 2.5rem; align-items: flex-start; }
+    .intro-text { flex: 1; min-width: 0; }
+    .intro h1 { font-size: 1.9rem; font-weight: 600; color: #111; line-height: 1.2; }
+    .intro-role { color: #555; margin: 0.35rem 0 1.1rem; font-size: 0.95rem; }
+    .intro-text p.body { margin-bottom: 0.85rem; color: #333; }
+    .keywords { font-size: 0.9rem; color: #444; margin-bottom: 1rem; }
+    .keywords strong { color: #111; font-weight: 600; }
+    .intro-links { font-size: 0.92rem; }
+    .intro-links a { font-weight: 500; }
+    .intro-links .sep { color: #bbb; margin: 0 0.35rem; }
+    .intro-photo {
+      width: 190px;
+      height: 215px;
       border-radius: 50%;
       object-fit: cover;
       flex-shrink: 0;
-      border: 3px solid #e5e5e5;
     }
-    .profile-text h1 {
-      font-size: 1.6rem;
-      font-weight: 600;
-      color: #111;
-      margin-bottom: 0.3rem;
-    }
-    .profile-tagline {
-      font-size: 0.875rem;
+
+    /* ── NEWS ── */
+    .news { list-style: none; }
+    .news li { display: grid; grid-template-columns: 5.5rem 1fr; gap: 0.75rem; padding: 0.3rem 0; }
+    .news-date { color: #0056b3; font-weight: 600; font-size: 0.88rem; padding-top: 0.05rem; }
+    details.more summary {
+      cursor: pointer;
       color: #0056b3;
+      font-size: 0.88rem;
       font-weight: 500;
-      margin-bottom: 0.85rem;
+      margin-top: 0.4rem;
+      list-style: none;
     }
-    .profile-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.85rem;
-    }
-    .profile-link {
-      font-size: 0.78rem;
-      font-weight: 500;
-      color: #555;
-      border: 1px solid #ddd;
-      padding: 0.25rem 0.65rem;
-      border-radius: 3px;
-      transition: border-color 0.15s, color 0.15s;
-    }
-    .profile-link:hover {
-      border-color: #0056b3;
-      color: #0056b3;
-      text-decoration: none;
-    }
+    details.more summary::-webkit-details-marker { display: none; }
+    details.more[open] summary { display: none; }
 
-    /* ── SECTION HEADERS ── */
-    .section { margin-bottom: 3rem; }
-    .section-header {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #888;
-      margin-bottom: 0.5rem;
+    /* ── RESEARCH ── */
+    .research-lead { color: #333; margin-bottom: 1.6rem; }
+    .paper { display: grid; grid-template-columns: 200px 1fr; gap: 1.5rem; padding: 1.1rem 0; }
+    .paper + .paper { border-top: 1px dashed #e5e5e5; }
+    .paper-thumb {
+      width: 200px;
+      height: 130px;
+      object-fit: contain;
+      background: #f6f7f9;
+      border: 1px solid #ececec;
+      border-radius: 4px;
+      padding: 4px;
     }
-    h2 {
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: #111;
-      margin-bottom: 1rem;
-      padding-bottom: 0.4rem;
-      border-bottom: 2px solid #0056b3;
-      display: inline-block;
-    }
-
-    /* ── ABOUT ── */
-    .about-text p {
-      font-size: 0.975rem;
-      color: #333;
-      margin-bottom: 0.85rem;
-    }
-    .about-text p:last-child { margin-bottom: 0; }
-
-    /* ── PROJECT CARDS ── */
-    .projects { display: flex; flex-direction: column; gap: 1rem; }
-
-    .project-card {
-      border: 1px solid #e5e5e5;
-      padding: 1.25rem;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 0.5rem 1rem;
-      align-items: start;
-      transition: border-color 0.15s;
-    }
-    .project-card:hover { border-color: #0056b3; }
-
-    .project-card.ongoing {
-      border-left: 3px solid #0056b3;
-    }
-
-    .project-top { grid-column: 1 / -1; }
-
-    .project-badge {
+    .paper-title { font-weight: 600; color: #111; line-height: 1.4; display: block; margin-bottom: 0.25rem; }
+    .paper-authors { font-size: 0.9rem; color: #444; }
+    .paper-authors strong { color: #111; }
+    .paper-venue { font-size: 0.9rem; color: #555; font-style: italic; }
+    .paper-venue .note { font-style: normal; color: #b35900; font-weight: 500; }
+    .paper-links { font-size: 0.88rem; margin: 0.2rem 0 0.45rem; }
+    .paper-links .sep { color: #bbb; margin: 0 0.3rem; }
+    .paper-desc { font-size: 0.92rem; color: #333; }
+    .tag {
       display: inline-block;
       font-size: 0.65rem;
       font-weight: 600;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      padding: 0.15rem 0.5rem;
+      padding: 0.1rem 0.45rem;
       border-radius: 2px;
-      margin-bottom: 0.5rem;
-    }
-    .badge-ongoing { background: #fff3cd; color: #856404; border: 1px solid #ffc107; }
-    .badge-deployed { background: #d1e7dd; color: #0a3622; border: 1px solid #a3cfbb; }
-    .badge-published { background: #f0f4ff; color: #0056b3; border: 1px solid #d0ddf5; }
-
-    .project-title {
-      font-size: 0.975rem;
-      font-weight: 600;
-      color: #111;
-      margin-bottom: 0.35rem;
-      display: block;
-    }
-    .project-desc {
-      font-size: 0.875rem;
-      color: #555;
-      margin-bottom: 0.65rem;
-      line-height: 1.55;
-    }
-    .project-meta {
-      font-size: 0.78rem;
-      color: #888;
-      margin-bottom: 0.2rem;
-    }
-    .project-meta span { color: #555; }
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-      margin-top: 0.65rem;
-    }
-    .project-tag {
-      font-size: 0.7rem;
-      font-weight: 500;
-      color: #666;
-      background: #f5f5f5;
-      border: 1px solid #e5e5e5;
-      padding: 0.15rem 0.5rem;
-      border-radius: 2px;
-    }
-    .project-link {
-      font-size: 0.825rem;
-      font-weight: 600;
-      color: #0056b3;
-      white-space: nowrap;
-      align-self: flex-end;
-    }
-    .project-link:hover { text-decoration: underline; }
-
-    /* ── PUBLICATIONS ── */
-    .pub-list { display: flex; flex-direction: column; gap: 1rem; }
-    .pub-item {
-      padding: 1rem 1rem 1rem 1.1rem;
-      border: 1px solid #e5e5e5;
-      border-left: 3px solid #e5e5e5;
-      font-size: 0.9rem;
-    }
-    .pub-item.hri { border-left-color: #0056b3; }
-    .pub-item.roman { border-left-color: #2d9e6b; }
-    .pub-item.iros { border-left-color: #6c757d; }
-    .pub-item.icmi { border-left-color: #9c6b00; }
-    .pub-item.icsr { border-left-color: #6c757d; }
-
-    .pub-venue {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 0.35rem;
-    }
-    .pub-venue.hri { color: #0056b3; }
-    .pub-venue.roman { color: #2d9e6b; }
-    .pub-venue.iros { color: #6c757d; }
-    .pub-venue.icmi { color: #9c6b00; }
-    .pub-venue.icsr { color: #6c757d; }
-
-    .pub-title {
-      font-weight: 600;
-      color: #111;
-      margin-bottom: 0.25rem;
-      line-height: 1.45;
-    }
-    .pub-authors { color: #666; font-size: 0.845rem; margin-bottom: 0.35rem; }
-    .pub-authors strong { color: #111; }
-    .pub-links { display: flex; gap: 0.75rem; margin-top: 0.35rem; }
-    .pub-link {
-      font-size: 0.75rem;
-      font-weight: 600;
+      margin-right: 0.35rem;
+      vertical-align: 2px;
+      background: #e8f0fb;
       color: #0056b3;
     }
+    .tag.journal { background: #eaf6ee; color: #1f7a3a; }
 
-    /* ── CONTACT ── */
-    .contact-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 0.65rem;
-      font-size: 0.9rem;
-      color: #333;
-    }
-    .contact-icon {
-      width: 18px;
-      text-align: center;
-      color: #888;
-      font-size: 0.85rem;
-      flex-shrink: 0;
-    }
+    footer { text-align: center; font-size: 0.8rem; color: #999; padding: 2rem 0 2.5rem; }
 
-    hr.divider { border: none; border-top: 1px solid #e5e5e5; margin: 2.5rem 0; }
-
-    /* ── FOOTER ── */
-    footer {
-      border-top: 1px solid #e5e5e5;
-      padding: 1.5rem 0;
-      margin-top: 3rem;
-      font-size: 0.78rem;
-      color: #aaa;
-      text-align: center;
-    }
-
-    @media (max-width: 560px) {
-      .profile { flex-direction: column; gap: 1.25rem; }
-      .nav-links { display: none; }
-      .project-card { grid-template-columns: 1fr; }
+    @media (max-width: 680px) {
+      .nav-links a { padding: 0.9rem 0.5rem; font-size: 0.8rem; }
+      .intro { flex-direction: column-reverse; align-items: center; gap: 1.5rem; }
+      .intro-photo { width: 150px; height: 170px; }
+      .paper { grid-template-columns: 1fr; gap: 0.75rem; }
+      .paper-thumb { width: 100%; height: 180px; }
+      .news li { grid-template-columns: 4.75rem 1fr; }
     }
   </style>
-  <script> window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); }; </script> <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
 
-  <!-- NAV -->
   <nav>
     <a class="nav-name" href="#top">Soomin Shin</a>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="Resume_AI_Collab.pdf">CV</a></li>
+      <li><a href="#intro">About</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="CV.pdf">CV</a></li>
     </ul>
   </nav>
 
   <div class="wrapper" id="top">
 
-    <!-- PROFILE HERO -->
-    <header class="profile">
-      <img class="profile-photo" src="images/profile.jpg" alt="Soomin Shin" />
-      <div class="profile-text">
-        <h1>Soomin Shin</h1>
-        <p class="profile-tagline">Ph.D. Candidate · Human-Robot Interaction · Human-AI Interaction · End-User Authoring System · Real-World Deployment</p>
-        <p style="font-size:0.9rem; color:#444; line-height:1.6;">
-          University of Waterloo · Electrical and Computer Engineering<br>
-          Supervisor: Prof. Kerstin Dautenhahn · <a href="https://uwaterloo.ca/social-intelligent-robotics-research-lab/">SIRRL</a>
-        </p>
-        <div class="profile-links">
-          <a class="profile-link" href="mailto:soomin.shin@uwaterloo.ca">Email</a>
-          <a class="profile-link" href="https://scholar.google.ca/citations?user=1EAlZ-4AAAAJ&hl=en&oi=ao">Google Scholar</a>
-          <a class="profile-link" href="https://github.com/soominimini">GitHub</a>
-          <a class="profile-link" href="https://www.linkedin.com/in/soomin-shin-14795a293/">LinkedIn</a>
-          <a class="profile-link" href="Resume_AI_Collab.pdf">CV</a>
-        </div>
-      </div>
-    </header>
+    <!-- INTRODUCTION -->
+    <section id="intro">
+      <div class="intro">
+        <div class="intro-text">
+          <h1>Soomin Shin</h1>
+          <p class="intro-role">PhD Candidate, Electrical and Computer Engineering, University of Waterloo</p>
 
-    <!-- ABOUT -->
-    <section class="section" id="about">
-      <p class="section-header">About</p>
+          <p class="body">
+            I am a PhD candidate in the <a href="https://uwaterloo.ca/social-intelligent-robotics-research-lab/">Social and Intelligent Robotics Research Lab (SIRRL)</a> at the University of Waterloo, advised by Prof. Kerstin Dautenhahn.
+          </p>
+          <p class="body">
+            I study why socially assistive robots rarely survive outside research labs, and how to change that. Over three years of co-design with speech-language therapists and a 6-month in-the-wild deployment with 9 children at a pediatric speech therapy centre, I found the main barrier: every new or updated robot interaction still needs a researcher. I am now building an LLM-powered authoring system that lets therapists create, customize, and iterate on robot interactions themselves, without engineering support.
+          </p>
+          <p class="body">
+            Before Waterloo, I received my M.S. in Brain and Cognitive Engineering from Korea University, advised by Prof. Christian Wallraven, where I compared human and deep-network perception of emotion in context. I was also a research intern at KIST, working on multi-robot hospital systems and human-robot trust. I hold a B.E. in Multimedia Engineering and a B.A. in Child Studies from Seoul Women's University.
+          </p>
+
+          <p class="keywords"><strong>Research keywords:</strong> human-robot interaction, socially assistive robots, end-user authoring, LLM-powered systems, co-design, in-the-wild deployment</p>
+
+          <p class="intro-links">
+            <a href="mailto:soomin.shin@uwaterloo.ca">Email</a><span class="sep">/</span>
+            <a href="CV.pdf">CV</a><span class="sep">/</span>
+            <a href="https://scholar.google.ca/citations?user=1EAlZ-4AAAAJ&hl=en&oi=ao">Google Scholar</a><span class="sep">/</span>
+            <a href="https://github.com/soominimini">GitHub</a><span class="sep">/</span>
+            <a href="https://www.linkedin.com/in/soomin-shin-14795a293/">LinkedIn</a>
+          </p>
+        </div>
+        <img class="intro-photo" src="images/profile.jpg" alt="Soomin Shin" />
+      </div>
+    </section>
+
+    <!-- NEWS -->
+    <section id="news">
+      <h2>News</h2>
+      <ul class="news">
+        <li><span class="news-date">2026</span><span>Our journal article on a therapist-operable social robot platform for pediatric speech-language therapy is published in <em>Advanced Robotics</em>.</span></li>
+        <li><span class="news-date">Mar 2026</span><span>Received the Physical AI Graduate Scholarship (2026&ndash;2027) from the Waterloo Data and AI Institute. <a href="https://uwaterloo.ca/electrical-computer-engineering/news/electrical-and-computer-engineering-ece-phd-student-soomin">[Waterloo ECE news]</a></span></li>
+        <li><span class="news-date">2026</span><span>Selected as an <strong>HRI Pioneer</strong> at ACM/IEEE HRI 2026 (acceptance rate 23%), and served as a student volunteer at HRI 2026.</span></li>
+        <li><span class="news-date">2025</span><span>Paper on co-design and personas for robot-assisted speech therapy games published at IEEE RO-MAN 2025.</span></li>
+        <li><span class="news-date">2024</span><span>Co-authored paper on co-designing robot-assisted speech-language therapy with SLPs published at ICSR 2024.</span></li>
+      </ul>
+      <details class="more">
+        <summary>Show more &darr;</summary>
+        <ul class="news">
+          <li><span class="news-date">Sep 2023</span><span>Started my PhD at the University of Waterloo with the International Doctoral Student Award and the Provost's Doctoral Entrance Award for Women.</span></li>
+          <li><span class="news-date">2023</span><span>Two papers at IEEE/RSJ IROS 2023 and one at IEEE RO-MAN 2023 from my research internship at KIST.</span></li>
+          <li><span class="news-date">2023</span><span>Received my M.S. in Brain and Cognitive Engineering from Korea University.</span></li>
+          <li><span class="news-date">2022</span><span>Paper on contextual modulation of affect published at ACM ICMI 2022.</span></li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- RESEARCH -->
+    <section id="research">
       <h2>Research</h2>
-      <div class="about-text">
-        <p>
-          I study why socially assistive robots fail to survive beyond research labs — and how to fix it. Through a 28-month co-design process and a 6-month in-the-wild deployment at a pediatric speech therapy center, I found that the core reason: creating and updating robot interaction requires researcher involvement, making real world adoption unsustainable.
-        </p>
-        <p>
-          My current work addresses this directly: I am building an LLM-powered authoring social robot system that enables non-technical users — therapists — to design, customize, and iterate on robot interactions without engineering support. The goal is a system where domain experts are authors of robot and AI behavior, not passive operators of researcher-defined scripts.
-        </p>
-        <p>
-          Prior to my Ph.D., I conducted research on contextual affect modeling at Korea University (ACM ICMI 2022), and worked as a research intern at KIST (2023) on multi-robot systems for hospital environments and human-robot trust.
-        </p>
+      <p class="research-lead">
+        My research focuses on making socially assistive robots sustainable in real-world settings: co-designing with domain experts, deploying robots long-term in the wild, and giving non-technical users authoring control over robot behavior.
+      </p>
+
+      <div class="paper">
+        <img class="paper-thumb" src="images/thumbs/llm-authoring.jpg" alt="LLM-powered authoring pipeline" loading="lazy" />
+        <div>
+          <span class="paper-title"><span class="tag">Ongoing</span>LLM-powered Social Robot Authoring System for Non-Technical End-Users</span>
+          <p class="paper-authors"><strong>S. Shin</strong>, K. Dautenhahn</p>
+          <p class="paper-links"><a href="LLM_robot.html">project page</a></p>
+          <p class="paper-desc">An authoring system that gives clinicians direct control over LLM-driven robot interactions, so they can create, customize, and iterate on therapy content without engineering support.</p>
+        </div>
       </div>
-    </section>
 
-    <hr class="divider">
-
-    <!-- PROJECTS -->
-    <section class="section" id="projects">
-      <p class="section-header">Research Projects</p>
-      <h2>Projects</h2>
-      <div class="projects">
-
-        <!-- LLM System -->
-        <div class="project-card ongoing">
-          <div class="project-top">
-            <span class="project-badge badge-ongoing">Ongoing</span>
-            <span class="project-title">LLM-powered Social Robot System for Non-Technical End-User</span>
-            <p class="project-desc">An LLM-powered authoring system that gives non-technical clinicians direct control over AI-driven robot interactions — enabling them to create, customize, and iterate on therapy content without engineering support.</p>
-            <p class="project-meta">Role: <span>Project Leader</span></p>
-            <div class="project-tags">
-              <span class="project-tag">LLM-powered system</span>
-              <span class="project-tag">End-User Authoring</span>
-              <span class="project-tag">Co-Design</span>
-              <span class="project-tag">ROS</span>
-            </div>
-          </div>
-          <a class="project-link" href="LLM_robot.html">View more →</a>
+      <div class="paper">
+        <img class="paper-thumb" src="images/thumbs/deployment.jpg" alt="In-the-wild deployment at a speech therapy centre" loading="lazy" />
+        <div>
+          <span class="paper-title"><span class="tag journal">Journal</span>From co-designed personas to in-the-wild deployment: a therapist-operable social robot platform for pediatric speech-language therapy</span>
+          <p class="paper-authors"><strong>S. Shin</strong>, S. Chandra, A. Rajan, S. Shah, K. Dautenhahn</p>
+          <p class="paper-venue">Advanced Robotics, 2026</p>
+          <p class="paper-links"><a href="therapy-games.html">project page</a></p>
+          <p class="paper-desc">A 6-month deployment with 9 children in an active speech therapy clinic, where the therapist operated the robot independently across repeated sessions.</p>
         </div>
-
-        <!-- Deployment -->
-        <div class="project-card">
-          <div class="project-top">
-            <span class="project-badge badge-deployed">Deployed · 6 months</span>
-            <span class="project-title">6-Month In-the-Wild Deployment: Socially Assistive Robots in a Pediatric Speech Therapy Centre <a href="#publications" style="font-weight:400; font-size:0.8rem;">[1, 2]</a></span>
-            <p class="project-desc">A 6-month real-world deployment with 9 children in an active speech therapy clinic — therapists operated the robot independently across repeated clinical sessions, surfacing what pre-scripted AI systems cannot sustain.</p>
-            <p class="project-meta">Role: <span>Project Leader</span></p>
-            <div class="project-tags">
-              <span class="project-tag">In-the-Wild HRI</span>
-              <span class="project-tag">Co-Design</span>
-              <span class="project-tag">Python</span>
-              <span class="project-tag">ROS</span>
-            </div>
-          </div>
-          <a class="project-link" href="therapy-games.html">View more →</a>
-        </div>
-
-        <!-- Hospital Robots -->
-        <div class="project-card">
-          <div class="project-top">
-            <span class="project-badge badge-published">Published · IROS 2023</span>
-            <span class="project-title">Robotic Assistance System for Hospital Isolation Wards <a href="#publications" style="font-weight:400; font-size:0.8rem;">[3]</a></span>
-            <p class="project-desc">Developed and evaluated a multi-robot system for hospital isolation wards, incorporating telemedicine, emergency alerts, and delivery services.</p>
-            <p class="project-meta">Role: <span>User Study Design &amp; Analysis</span></p>
-            <div class="project-tags">
-              <span class="project-tag">Multi-Robot Systems</span>
-              <span class="project-tag">Usability Study</span>
-              <span class="project-tag">Python</span>
-              <span class="project-tag">ROS</span>
-            </div>
-          </div>
-          <a class="project-link" href="hetero_robot.html">View more →</a>
-        </div>
-
-        <!-- Trust & Control -->
-        <div class="project-card">
-          <div class="project-top">
-            <span class="project-badge badge-published">Published · RO-MAN 2023</span>
-            <span class="project-title">Human-Robot Trust and Control <a href="#publications" style="font-weight:400; font-size:0.8rem;">[5]</a></span>
-            <p class="project-desc">Investigated whether users prefer robots that act proactively or those that follow specific verbal commands — with implications for designing AI systems where end users maintain meaningful control.</p>
-            <p class="project-meta">Role: <span>Project Leader</span></p>
-            <div class="project-tags">
-              <span class="project-tag">HRI Study Design</span>
-              <span class="project-tag">User Studies</span>
-              <span class="project-tag">Trust</span>
-            </div>
-          </div>
-          <a class="project-link" href="control_delegate.html">View more →</a>
-        </div>
-
-        <!-- Multi-agent Trust -->
-        <div class="project-card">
-          <div class="project-top">
-            <span class="project-badge badge-published">Published · IROS 2023</span>
-            <span class="project-title">Multi-Agent Robot Trust Studies <a href="#publications" style="font-weight:400; font-size:0.8rem;">[4]</a></span>
-            <p class="project-desc">Explored how perceived hierarchies between robots in a team affect human trust and service evaluation.</p>
-            <p class="project-meta">Role: <span>Project Leader</span></p>
-            <div class="project-tags">
-              <span class="project-tag">HRI Study Design</span>
-              <span class="project-tag">User Studies</span>
-              <span class="project-tag">Trust</span>
-            </div>
-          </div>
-          <a class="project-link" href="robot-trust-study.html">View more →</a>
-        </div>
-
-        <!-- Emotion Recognition -->
-        <div class="project-card">
-          <div class="project-top">
-            <span class="project-badge badge-published">Published · ICMI 2022</span>
-            <span class="project-title">Contextual Emotion Recognition <a href="#publications" style="font-weight:400; font-size:0.8rem;">[6]</a></span>
-            <p class="project-desc">Comparison study on human perception versus CNN-based contextual emotion recognition models, evaluating AI system perception against human baselines.</p>
-            <p class="project-meta">Role: <span>Project Leader</span></p>
-            <div class="project-tags">
-              <span class="project-tag">Affective Computing</span>
-              <span class="project-tag">Deep Learning</span>
-              <span class="project-tag">Human Perception</span>
-            </div>
-          </div>
-          <a class="project-link" href="contextual-affect-recognition.html">View more →</a>
-        </div>
-
       </div>
-    </section>
 
-    <hr class="divider">
-
-    <!-- PUBLICATIONS -->
-    <section class="section" id="publications">
-      <p class="section-header">Publications</p>
-      <h2>Selected Publications</h2>
-      <div class="pub-list">
-
-        <div class="pub-item hri">
-          <div class="pub-venue hri">HRI 2026 · Pioneer Track · Acceptance rate: 23%</div>
-          <div class="pub-title">From co-design to deployment: Toward sustainable and scalable socially assistive robots for speech-language therapy</div>
-          <div class="pub-authors"><strong>Shin, S.</strong></div>
-          <div class="pub-links">
-            <span class="pub-link">ACM/IEEE HRI 2026</span>
-          </div>
+      <div class="paper">
+        <img class="paper-thumb" src="images/thumbs/robot-system.jpg" alt="Robot-assisted therapy system overview" loading="lazy" />
+        <div>
+          <span class="paper-title">From co-design to deployment: Toward sustainable and scalable socially assistive robots for speech-language therapy</span>
+          <p class="paper-authors"><strong>S. Shin</strong></p>
+          <p class="paper-venue">ACM/IEEE HRI 2026 Pioneers <span class="note">(acceptance rate 23%)</span></p>
+          <p class="paper-desc">Extended abstract on the path from co-design to long-term deployment, and why end-user authoring is the next step for scalable socially assistive robots.</p>
         </div>
-
-        <div class="pub-item roman">
-          <div class="pub-venue roman">RO-MAN 2025</div>
-          <div class="pub-title">How Co-design and Personas can Inform Game Implementation for Robot-assisted Speech Therapy in Clinical Settings</div>
-          <div class="pub-authors"><strong>Shin, S.</strong>, Chandra, S., Rajan, A., et al.</div>
-          <div class="pub-links">
-            <span class="pub-link">IEEE RO-MAN 2025</span>
-          </div>
-        </div>
-
-        <div class="pub-item icsr">
-          <div class="pub-venue icsr">ICSR 2024</div>
-          <div class="pub-title">Development of Robot-Assisted Speech-Language Therapy: Co-design with Speech-Language Pathologists</div>
-          <div class="pub-authors">Azizi, N., Chandra, S., <strong>Shin, S.</strong>, Rajan, A., et al.</div>
-          <div class="pub-links">
-            <a class="pub-link" href="https://link.springer.com/chapter/10.1007/978-981-96-3522-1_32">Springer Link</a>
-          </div>
-        </div>
-
-        <div class="pub-item iros">
-          <div class="pub-venue iros">IROS 2023</div>
-          <div class="pub-title">Heterogeneous robot-assisted services in isolation wards: a system development and usability study</div>
-          <div class="pub-authors">Kwon, Y., <strong>Shin, S.</strong>, Yang, K., et al.</div>
-          <div class="pub-links">
-            <a class="pub-link" href="https://ieeexplore.ieee.org/document/10341857">IEEE Link</a>
-          </div>
-        </div>
-
-        <div class="pub-item iros">
-          <div class="pub-venue iros">IROS 2023</div>
-          <div class="pub-title">Do Hierarchies in a Robot Team Impact the Service Evaluation by Users?</div>
-          <div class="pub-authors"><strong>Shin, S.</strong>, Kwak, S. S.</div>
-          <div class="pub-links">
-            <a class="pub-link" href="https://ieeexplore.ieee.org/document/10341364">IEEE Link</a>
-          </div>
-        </div>
-
-        <div class="pub-item roman">
-          <div class="pub-venue roman">RO-MAN 2023</div>
-          <div class="pub-title">Is a Robot Trustworthy Enough to Delegate Your Control?</div>
-          <div class="pub-authors"><strong>Shin, S.</strong>, Kang, D., Kwak, S. S.</div>
-          <div class="pub-links">
-            <a class="pub-link" href="https://ieeexplore.ieee.org/document/10309515">IEEE Link</a>
-          </div>
-        </div>
-
-        <div class="pub-item icmi">
-          <div class="pub-venue icmi">ICMI 2022</div>
-          <div class="pub-title">Contextual modulation of affect: Comparing humans and deep neural networks</div>
-          <div class="pub-authors"><strong>Shin, S.</strong>, Kim, D., Wallraven, C.</div>
-          <div class="pub-links">
-            <a class="pub-link" href="https://dl.acm.org/doi/10.1145/3536220.3558036">ACM Link</a>
-          </div>
-        </div>
-
       </div>
-    </section>
 
-    <hr class="divider">
+      <div class="paper">
+        <img class="paper-thumb" src="images/thumbs/therapy-games.jpg" alt="Therapy game selection interface" loading="lazy" />
+        <div>
+          <span class="paper-title">How co-design and personas can inform game implementation for robot-assisted speech therapy in clinical settings</span>
+          <p class="paper-authors"><strong>S. Shin</strong>, S. Chandra, A. Rajan, S. Shah, K. Dautenhahn</p>
+          <p class="paper-venue">IEEE RO-MAN 2025</p>
+          <p class="paper-links"><a href="therapy-games.html">project page</a></p>
+          <p class="paper-desc">How co-design sessions and personas built with speech-language pathologists shaped the robot therapy games used in the clinic.</p>
+        </div>
+      </div>
 
-    <!-- CONTACT -->
-    <section class="section" id="contact">
-      <p class="section-header">Contact</p>
-      <h2>Get in Touch</h2>
-      <div class="contact-grid">
-        <div class="contact-item">
-          <span class="contact-icon">✉</span>
-          <a href="mailto:soomin.shin@uwaterloo.ca">soomin.shin@uwaterloo.ca</a>
+      <div class="paper">
+        <img class="paper-thumb" src="images/thumbs/qtrobot.jpg" alt="QTrobot with tablet and therapy cards" loading="lazy" />
+        <div>
+          <span class="paper-title">Development of robot-assisted speech-language therapy: Co-design with speech-language pathologists</span>
+          <p class="paper-authors">N. Azizi, S. Chandra, A. Rajan, K. Krishna, S. Shah, <strong>S. Shin</strong>, K. Dautenhahn</p>
+          <p class="paper-venue">ICSR 2024</p>
+          <p class="paper-links"><a href="https://link.springer.com/chapter/10.1007/978-981-96-3522-1_32">paper</a></p>
+          <p class="paper-desc">An 18-month co-design process with SLPs to build a robot-assisted therapy system around their clinical needs.</p>
         </div>
-        <div class="contact-item">
-          <span class="contact-icon">in</span>
-          <a href="https://www.linkedin.com/in/soomin-shin-14795a293/">linkedin.com/in/soominshin</a>
+      </div>
+
+      <div class="paper">
+        <img class="paper-thumb" src="images/thumbs/isolation-ward.jpg" alt="Care robot in an isolation ward" loading="lazy" />
+        <div>
+          <span class="paper-title">Heterogeneous robot-assisted services in isolation wards: A system development and usability study</span>
+          <p class="paper-authors">Y. Kwon, <strong>S. Shin</strong>, K. Yang, et al.</p>
+          <p class="paper-venue">IEEE/RSJ IROS 2023</p>
+          <p class="paper-links"><a href="https://ieeexplore.ieee.org/document/10341857">paper</a><span class="sep">|</span><a href="hetero_robot.html">project page</a></p>
+          <p class="paper-desc">A multi-robot system for hospital isolation wards covering telemedicine, emergency alerts, and delivery, evaluated with medical staff.</p>
         </div>
-        <div class="contact-item">
-          <span class="contact-icon">⌥</span>
-          <a href="https://github.com/soominimini">github.com/soominimini</a>
+      </div>
+
+      <div class="paper">
+        <img class="paper-thumb" src="images/thumbs/robot-team.jpg" alt="Robot team used in the hierarchy study" loading="lazy" />
+        <div>
+          <span class="paper-title">Do hierarchies in a robot team impact the service evaluation by users?</span>
+          <p class="paper-authors"><strong>S. Shin</strong>, S. S. Kwak</p>
+          <p class="paper-venue">IEEE/RSJ IROS 2023</p>
+          <p class="paper-links"><a href="https://ieeexplore.ieee.org/document/10341364">paper</a><span class="sep">|</span><a href="robot-trust-study.html">project page</a></p>
+          <p class="paper-desc">How perceived hierarchies between robots in a team affect people's trust and their evaluation of the service.</p>
         </div>
-        <div class="contact-item">
-          <span class="contact-icon">◎</span>
-          <a href="https://scholar.google.ca/citations?user=1EAlZ-4AAAAJ&hl=en&oi=ao">Google Scholar</a>
+      </div>
+
+      <div class="paper">
+        <img class="paper-thumb" src="images/thumbs/delegate-control.jpg" alt="Drawer robot used in the control study" loading="lazy" />
+        <div>
+          <span class="paper-title">Is a robot trustworthy enough to delegate your control?</span>
+          <p class="paper-authors"><strong>S. Shin</strong>, D. Kang, S. S. Kwak</p>
+          <p class="paper-venue">IEEE RO-MAN 2023</p>
+          <p class="paper-links"><a href="https://ieeexplore.ieee.org/document/10309515">paper</a><span class="sep">|</span><a href="control_delegate.html">project page</a></p>
+          <p class="paper-desc">Whether people prefer robots that act proactively or ones that wait for specific verbal commands, and what that means for keeping users in control.</p>
+        </div>
+      </div>
+
+      <div class="paper">
+        <img class="paper-thumb" src="images/thumbs/contextual-affect.jpg" alt="Contextual emotion recognition stimuli" loading="lazy" />
+        <div>
+          <span class="paper-title">Contextual modulation of affect: Comparing humans and deep neural networks</span>
+          <p class="paper-authors"><strong>S. Shin</strong>, D. Kim, C. Wallraven</p>
+          <p class="paper-venue">ACM ICMI 2022 Companion</p>
+          <p class="paper-links"><a href="https://dl.acm.org/doi/10.1145/3536220.3558036">paper</a><span class="sep">|</span><a href="contextual-affect-recognition.html">project page</a></p>
+          <p class="paper-desc">Human perception experiments compared against CNN-based contextual emotion recognition on in-the-wild images.</p>
         </div>
       </div>
     </section>
 
   </div>
 
-  <footer>
-    Soomin Shin · University of Waterloo · SIRRL
-  </footer>
+  <footer>&copy; 2026 Soomin Shin &middot; University of Waterloo &middot; SIRRL</footer>
 
+  <script> window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); }; </script> <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
