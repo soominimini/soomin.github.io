@@ -113,6 +113,11 @@
     .paper-links { font-size: 0.88rem; margin: 0.2rem 0 0.45rem; }
     .paper-links .sep { color: #bbb; margin: 0 0.3rem; }
     .paper-desc { font-size: 0.92rem; color: #333; }
+    .theme { font-size: 1.02rem; font-weight: 600; color: #1a1a2e; margin: 1.8rem 0 0.2rem; padding-bottom: 0.35rem; border-bottom: 1px solid #e5e5e5; }
+    .paper-headline { font-weight: 600; font-size: 1.02rem; color: #111; line-height: 1.4; display: block; margin-bottom: 0.35rem; }
+    .paper-list { font-size: 0.92rem; color: #333; margin: 0.3rem 0 0.4rem 1.2rem; }
+    .paper-cite { margin-top: 0.6rem; }
+    .paper-cite .paper-title { font-weight: 500; font-size: 0.9rem; color: #333; margin-bottom: 0; }
     .tag {
       display: inline-block;
       font-size: 0.65rem;
@@ -127,6 +132,7 @@
       color: #0056b3;
     }
     .tag.journal { background: #eaf6ee; color: #1f7a3a; }
+    .tag.dc { background: #f3ecfa; color: #6a3d9a; }
 
     footer { text-align: center; font-size: 0.8rem; color: #999; padding: 2rem 0 2.5rem; }
 
@@ -189,7 +195,7 @@
     <section id="news">
       <h2>News</h2>
       <ul class="news news-scroll" tabindex="0" aria-label="News">
-        <li><span class="news-date">Jul 2026</span><span>Our journal paper extending our RO-MAN 2025 work is published in <em>Advanced Robotics</em> (RO-MAN 2025 Special Issue). <a href="https://doi.org/10.1080/01691864.2026.2700312">[paper]</a></span></li>
+        <li><span class="news-date">Jul 2026</span><span>Our journal paper extending our RO-MAN 2025 work is published in <em>Advanced Robotics</em></span></li>
         <li><span class="news-date">Mar 2026</span><span>Received the Physical AI Graduate Scholarship (2026&ndash;2027) from the Waterloo Data and AI Institute. <a href="https://uwaterloo.ca/electrical-computer-engineering/news/electrical-and-computer-engineering-ece-phd-student-soomin">[Waterloo ECE news]</a></span></li>
         <li><span class="news-date">2026</span><span>Selected as an <strong>HRI Pioneer</strong> at ACM/IEEE HRI 2026 (acceptance rate 23%), and served as a student volunteer at HRI 2026.</span></li>
         <li><span class="news-date">2025</span><span>Paper on co-design and personas for robot-assisted speech therapy games published at IEEE RO-MAN 2025.</span></li>
@@ -205,101 +211,120 @@
     <section id="research">
       <h2>Research</h2>
       <p class="research-lead">
-        My research focuses on making socially assistive robots sustainable in real-world settings: co-designing with domain experts, deploying robots long-term in the wild, and giving non-technical users authoring control over robot behavior.
+        My research focuses on making socially assistive robots sustainable in real-world settings. I co-design robots with domain experts, deploy them long-term in everyday settings, and give non-technical users control over how the robots behave.
       </p>
+
+      <h3 class="theme">Getting social robots out of the lab and into the real world</h3>
 
       <div class="paper">
         <img class="paper-thumb" src="images/thumbs/llm-authoring.jpg" alt="LLM-powered authoring pipeline" loading="lazy" />
         <div>
-          <span class="paper-title"><span class="tag">Ongoing</span>LLM-powered Social Robot Authoring System for Non-Technical End-Users</span>
-          <p class="paper-authors"><strong>S. Shin</strong>, K. Dautenhahn</p>
-          <p class="paper-desc">An authoring system that gives clinicians direct control over LLM-driven robot interactions, so they can create, customize, and iterate on therapy content without engineering support.</p>
+          <span class="paper-headline">Therapists design robot interactions themselves</span>
+          <p class="paper-desc">Each child in speech therapy needs activities matched to their age, level, and interests. Today, a researcher must program every new robot interaction. I am building an LLM-powered authoring system so that therapists can create and adapt robot interactions themselves. The goal is a robot that stays useful for years and serves children across a wide range of ages and diagnoses.</p>
+          <div class="paper-cite">
+            <span class="paper-title"><span class="tag">Ongoing</span>LLM-powered Social Robot Authoring System for Non-Technical End-Users</span>
+            <p class="paper-authors"><strong>S. Shin</strong>, K. Dautenhahn</p>
+          </div>
         </div>
       </div>
 
       <div class="paper">
         <img class="paper-thumb" src="images/thumbs/deployment.jpg" alt="In-the-wild deployment at a speech therapy centre" loading="lazy" />
         <div>
-          <span class="paper-title"><span class="tag journal">Journal</span>From co-designed personas to in-the-wild deployment: a therapist-operable social robot platform for pediatric speech-language therapy</span>
-          <p class="paper-authors"><strong>S. Shin</strong>, S. Chandra, A. Rajan, S. Shah, K. Dautenhahn</p>
-          <p class="paper-venue">Advanced Robotics, 2026 &middot; <a href="https://www.ro-man2025.org/special-issue">RO-MAN 2025 Special Issue</a></p>
-          <p class="paper-links"><a href="https://doi.org/10.1080/01691864.2026.2700312">paper</a></p>
-          <p class="paper-desc">Extends our RO-MAN 2025 paper with five design requirements and an 11-week clinic deployment (6 children, 7 sessions each) run by the therapist with no researchers on site. The robot reliably re-engaged attention and eased emotional regulation, but fixed activities revealed developmental mismatch and novelty decay, calling for per-child adaptation.</p>
-        </div>
-      </div>
-
-      <div class="paper">
-        <img class="paper-thumb" src="images/thumbs/robot-system.jpg" alt="Robot-assisted therapy system overview" loading="lazy" />
-        <div>
-          <span class="paper-title">From co-design to deployment: Toward sustainable and scalable socially assistive robots for speech-language therapy</span>
-          <p class="paper-authors"><strong>S. Shin</strong></p>
-          <p class="paper-venue">ACM/IEEE HRI 2026 Pioneers <span class="note">(acceptance rate 23%)</span></p>
-          <p class="paper-desc">Extended abstract on the path from co-design to long-term deployment, and why end-user authoring is the next step for scalable socially assistive robots.</p>
-        </div>
-      </div>
-
-      <div class="paper">
-        <img class="paper-thumb" src="images/thumbs/qtrobot.jpg" alt="QTrobot with tablet and therapy cards" loading="lazy" />
-        <div>
-          <span class="paper-title">How co-design and personas can inform game implementation for robot-assisted speech therapy in clinical settings</span>
-          <p class="paper-authors"><strong>S. Shin</strong>, S. Chandra, A. Rajan, S. Shah, K. Dautenhahn</p>
-          <p class="paper-venue">IEEE RO-MAN 2025</p>
-          <p class="paper-desc">How co-design sessions and personas built with speech-language pathologists shaped the robot therapy games used in the clinic.</p>
+          <span class="paper-headline">A therapy robot in a real clinic, with no researchers present</span>
+          <p class="paper-desc">Can therapists use social robots in routine practice without engineers or researchers? A therapist used our social robot system in regular practice with six children with language delay. Each child had seven weekly sessions within an 11-week period, and no researchers were on site. The therapist reported that the robot helped children regain attention, become calm during meltdowns, and stay motivated. For some children, though, the fixed robot scripts did not match their developmental level or became repetitive. This result motivates my current work on therapist authoring.</p>
+          <div class="paper-cite">
+            <span class="paper-title"><span class="tag journal">Journal</span>From co-designed personas to in-the-wild deployment: a therapist-operable social robot platform for pediatric speech-language therapy</span>
+            <p class="paper-authors"><strong>S. Shin</strong>, S. Chandra, A. Rajan, S. Shah, K. Dautenhahn</p>
+            <p class="paper-venue">Advanced Robotics, 2026 &middot;   <a href="https://doi.org/10.1080/01691864.2026.2700312">paper</a></p>
+          </div>
+          <div class="paper-cite">
+            <span class="paper-title"><span class="tag dc">Doctoral Consortium</span>From co-design to deployment: Toward sustainable and scalable socially assistive robots for speech-language therapy</span>
+            <p class="paper-authors"><strong>S. Shin</strong></p>
+            <p class="paper-venue">ACM/IEEE HRI 2026 Pioneers <span class="note">(acceptance rate 23%)</span> &middot; <a href="https://doi.org/10.1145/3776734.3794628">paper</a></p>
+          </div>
         </div>
       </div>
 
       <div class="paper">
         <img class="paper-thumb" src="images/thumbs/qtrobot.jpg" alt="QTrobot with tablet and therapy cards" loading="lazy" />
         <div>
-          <span class="paper-title">Development of robot-assisted speech-language therapy: Co-design with speech-language pathologists</span>
-          <p class="paper-authors">N. Azizi, S. Chandra, A. Rajan, K. Krishna, S. Shah, <strong>S. Shin</strong>, K. Dautenhahn</p>
-          <p class="paper-venue">ICSR 2024</p>
-          <p class="paper-links"><a href="https://link.springer.com/chapter/10.1007/978-981-96-3522-1_32">paper</a></p>
-          <p class="paper-desc">An 18-month co-design process with SLPs to build a robot-assisted therapy system around their clinical needs.</p>
+          <span class="paper-headline">Designing a robot that therapists can run without engineers</span>
+          <p class="paper-desc">What do non-technical users, such as therapists, need to use social robots in real-world settings? We co-designed the robot with two speech-language therapists for 22 months and identified five design requirements:</p>
+          <ul class="paper-list">
+            <li>Instant control during sessions</li>
+            <li>Fit with existing therapy routines</li>
+            <li>Clear robot speech</li>
+            <li>Age-appropriate difficulty</li>
+            <li>Enough interaction variety for long-term use</li>
+          </ul>
+          <p class="paper-desc">We built these requirements into a platform with a social robot and a tablet dashboard. The dashboard runs 22 therapy activities for children aged 0&ndash;9.</p>
+          <div class="paper-cite">
+            <span class="paper-title"><span class="tag">Conference</span>How co-design and personas can inform game implementation for robot-assisted speech therapy in clinical settings</span>
+            <p class="paper-authors"><strong>S. Shin</strong>, S. Chandra, A. Rajan, S. Shah, K. Dautenhahn</p>
+            <p class="paper-venue">IEEE RO-MAN 2025 &middot; <a href="https://ieeexplore.ieee.org/document/11217571">paper</a></p>
+          </div>
+          <div class="paper-cite">
+            <span class="paper-title"><span class="tag">Conference</span>Development of robot-assisted speech-language therapy: Co-design with speech-language pathologists</span>
+            <p class="paper-authors">N. Azizi, S. Chandra, A. Rajan, K. Krishna, S. Shah, <strong>S. Shin</strong>, K. Dautenhahn</p>
+            <p class="paper-venue">ICSR 2024 &middot; <a href="https://link.springer.com/chapter/10.1007/978-981-96-3522-1_32">paper</a></p>
+          </div>
         </div>
       </div>
+
+      <h3 class="theme">Trust and control in service robots</h3>
 
       <div class="paper">
         <img class="paper-thumb" src="images/thumbs/isolation-ward.jpg" alt="Care robot in an isolation ward" loading="lazy" />
         <div>
-          <span class="paper-title">Heterogeneous robot-assisted services in isolation wards: A system development and usability study</span>
-          <p class="paper-authors">Y. Kwon, <strong>S. Shin</strong>, K. Yang, et al.</p>
-          <p class="paper-venue">IEEE/RSJ IROS 2023</p>
-          <p class="paper-links"><a href="https://ieeexplore.ieee.org/document/10341857">paper</a></p>
-          <p class="paper-desc">A multi-robot system for hospital isolation wards covering telemedicine, emergency alerts, and delivery, evaluated with medical staff.</p>
+          <span class="paper-headline">A team of robots for hospital isolation wards</span>
+          <p class="paper-desc">We built a team of two robots to reduce infection risk and staff workload in isolation wards. A care robot handles telemedicine and emergency detection, and a delivery robot transports items. I designed the user study scenarios. I interviewed nurses with COVID-19 isolation-ward experience and people with personal quarantine experience. Then I turned their feedback into recommendations for the system.</p>
+          <div class="paper-cite">
+            <span class="paper-title"><span class="tag">Conference</span>Heterogeneous robot-assisted services in isolation wards: A system development and usability study</span>
+            <p class="paper-authors">Y. Kwon, <strong>S. Shin</strong>, K. Yang, et al.</p>
+            <p class="paper-venue">IEEE/RSJ IROS 2023 &middot; <a href="https://ieeexplore.ieee.org/document/10341857">paper</a></p>
+          </div>
         </div>
       </div>
 
       <div class="paper">
         <img class="paper-thumb" src="images/thumbs/robot-team.jpg" alt="Robot team used in the hierarchy study" loading="lazy" />
         <div>
-          <span class="paper-title">Do hierarchies in a robot team impact the service evaluation by users?</span>
-          <p class="paper-authors"><strong>S. Shin</strong>, S. S. Kwak</p>
-          <p class="paper-venue">IEEE/RSJ IROS 2023</p>
-          <p class="paper-links"><a href="https://ieeexplore.ieee.org/document/10341364">paper</a></p>
-          <p class="paper-desc">How perceived hierarchies between robots in a team affect people's trust and their evaluation of the service.</p>
+          <span class="paper-headline">Should robots in a team have a boss?</span>
+          <p class="paper-desc">Service robots increasingly work in teams. I tested whether a visible hierarchy between robots changes how users rate the team. People preferred flat teams, especially when both robots used honorific speech. They also rated teams that mirrored respectful human interaction as more socially intelligent and professional.</p>
+          <div class="paper-cite">
+            <span class="paper-title"><span class="tag">Conference</span>Do hierarchies in a robot team impact the service evaluation by users?</span>
+            <p class="paper-authors"><strong>S. Shin</strong>, S. S. Kwak</p>
+            <p class="paper-venue">IEEE/RSJ IROS 2023 &middot; <a href="https://ieeexplore.ieee.org/document/10341364">paper</a></p>
+          </div>
         </div>
       </div>
 
       <div class="paper">
         <img class="paper-thumb" src="images/thumbs/delegate-control.jpg" alt="Drawer robot used in the control study" loading="lazy" />
         <div>
-          <span class="paper-title">Is a robot trustworthy enough to delegate your control?</span>
-          <p class="paper-authors"><strong>S. Shin</strong>, D. Kang, S. S. Kwak</p>
-          <p class="paper-venue">IEEE RO-MAN 2023</p>
-          <p class="paper-links"><a href="https://ieeexplore.ieee.org/document/10309515">paper</a></p>
-          <p class="paper-desc">Whether people prefer robots that act proactively or ones that wait for specific verbal commands, and what that means for keeping users in control.</p>
+          <span class="paper-headline">When should a robot act without being asked?</span>
+          <p class="paper-desc">Using a robotic drawer, I compared a robot that acts on its own judgment with a robot that waits for a voice command. Users rated the command-following robot as more useful, intelligent, and appropriate. This result suggests that people want to keep control of a robot, even in everyday tasks.</p>
+          <div class="paper-cite">
+            <span class="paper-title"><span class="tag">Conference</span>Is a robot trustworthy enough to delegate your control?</span>
+            <p class="paper-authors"><strong>S. Shin</strong>, D. Kang, S. S. Kwak</p>
+            <p class="paper-venue">IEEE RO-MAN 2023 &middot; <a href="https://ieeexplore.ieee.org/document/10309515">paper</a></p>
+          </div>
         </div>
       </div>
+
+      <h3 class="theme">Emotion perception</h3>
 
       <div class="paper">
         <img class="paper-thumb" src="images/thumbs/contextual-affect.jpg" alt="Contextual emotion recognition stimuli" loading="lazy" />
         <div>
-          <span class="paper-title">Contextual modulation of affect: Comparing humans and deep neural networks</span>
-          <p class="paper-authors"><strong>S. Shin</strong>, D. Kim, C. Wallraven</p>
-          <p class="paper-venue">ACM ICMI 2022 Companion</p>
-          <p class="paper-links"><a href="https://dl.acm.org/doi/10.1145/3536220.3558036">paper</a></p>
-          <p class="paper-desc">Human perception experiments compared against CNN-based contextual emotion recognition on in-the-wild images.</p>
+          <span class="paper-headline">Do AI models read emotions in context the way people do?</span>
+          <p class="paper-desc">People judge a facial expression partly from its surroundings. I compared human perception experiments with deep neural networks on real-world photos. I found that people use contextual cues, but the models rely mostly on the face. To match human perception, emotion-recognition AI needs to model context.</p>
+          <div class="paper-cite">
+            <span class="paper-title"><span class="tag">Workshop</span>Contextual modulation of affect: Comparing humans and deep neural networks</span>
+            <p class="paper-authors"><strong>S. Shin</strong>, D. Kim, C. Wallraven</p>
+            <p class="paper-venue">ACM ICMI 2022 Companion &middot; <a href="https://dl.acm.org/doi/10.1145/3536220.3558036">paper</a></p>
+          </div>
         </div>
       </div>
     </section>
