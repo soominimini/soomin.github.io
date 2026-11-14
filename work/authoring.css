@@ -36,3 +36,7 @@
 .authoring-copy {
   margin-top: 1rem;
 }
+
+[aria-labelledby="workflow"] > .authoring-diagram {
+  max-width: 48rem;
+}

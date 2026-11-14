@@ -33,25 +33,35 @@
     </header>
 
     <section class="case-section" aria-labelledby="workflow">
-      <h2 id="workflow">From therapist input to robot interaction</h2>
+      <h2 id="workflow">How robot interactions are prepared</h2>
+
       <figure class="authoring-diagram">
-        <img src="media/overall-authoring-pipeline.png" width="1065" height="360" alt="Seven steps from child profile input to robot-assisted therapy. The system retrieves guidance from a speech-language pathology knowledge base, builds an activity-specific prompt, and generates draft materials. The therapist approves, revises, or rejects the materials before the robot delivers the activity." />
+        <h3>Researcher-scripted workflow</h3>
+        <img src="media/researcher-scripted-workflow.png" width="996" height="332" alt="Researchers write the robot’s scripts. The therapist runs robot sessions and shares feedback. A return arrow leads from therapist feedback back to the researchers, who revise the scripts for future sessions." />
         <figcaption>
-          <p>The system uses the child’s profile and speech-language therapy guidance to generate draft materials for therapist review before the robot delivers the activity.</p>
-          <a href="media/overall-authoring-pipeline.png">View full size</a>
+          <p>Researchers prepare all robot interactions in advance. The therapist runs sessions and shares feedback, which the researchers use to revise the scripts for future sessions.</p>
+          <a href="media/researcher-scripted-workflow.png" aria-label="View the researcher-scripted workflow at full size">View full size</a>
         </figcaption>
       </figure>
-      <p class="authoring-copy">The system retrieves relevant language targets and interests from a knowledge base and uses them to build an activity-specific prompt. A large language model (LLM) generates the draft. A vision-language model (VLM) interprets visual input when an activity needs it, such as a picture card for a question or a view of how a child responds to an instruction.</p>
+
+      <figure class="authoring-diagram">
+        <h3>Therapist authoring prototype</h3>
+        <img src="media/therapist-authoring-workflow.png" width="1489" height="496" alt="The therapist enters a child profile on a tablet. The robot authoring system retrieves relevant clinical guidance and generates draft robot interactions. A return arrow leads back to the authoring system to regenerate the interactions." />
+        <figcaption>
+          <p>The therapist enters a child profile on the tablet. The robot authoring system retrieves relevant guidance from a knowledge base informed by speech-language therapists and drafts robot interactions for the therapist to review. The therapist can regenerate the interactions through the authoring system.</p>
+          <a href="media/therapist-authoring-workflow.png" aria-label="View the therapist authoring workflow at full size">View full size</a>
+        </figcaption>
+      </figure>
     </section>
 
     <section class="case-section" aria-labelledby="activity-flows">
-      <h2 id="activity-flows">How the pipeline changes by activity</h2>
+      <h2 id="activity-flows">How the workflow changes by activity</h2>
 
       <figure class="authoring-diagram">
-        <h3>WH conversational cards</h3>
+        <h3>WH conversational cards (conventional -> current robot-support therapy -> VLM-powered robot therapy)</h3>
 
               <figure class="authoring-diagram">
-        <h3>Conventional therapy, current robot-supported therapy, new VLM-powered robot therapy</h3>
+<!--        <h3>Conventional therapy, current robot-supported therapy, new VLM-powered robot therapy</h3>-->
         <img src="media/wh-questions-comparison.webp" width="5025" height="2090" loading="lazy" alt="In conventional therapy, a therapist asks the child a question from a physical card. In current robot-supported therapy, a researcher loads a prewritten question list onto QTrobot and a therapist taps a tablet button to have it ask a question. In the VLM-powered workflow, the therapist shows the picture card to QTrobot, which asks a question about it." />
         <figcaption>
           <p>In conventional therapy, the therapist shows a picture card and asks a question like “Why do you think the child is crying?” In the current robot-supported workflow, the therapist taps a tablet button and robotq asks a question from a researcher-written list. With therapist authoring, the therapist shows the picture card to robot, the system drafts questions about the scene in the picture, and robot asks the questions.</p>
@@ -104,12 +114,12 @@
       </figure>
     </section>
 
-    <section class="case-section">
-      <h2>Why give therapists authoring control?</h2>
-      <div class="body">
-        <p>In our clinic deployment, a speech-language therapist ran robot sessions independently. I’m building on that work so therapists can also create and adapt the activities they use as a child’s needs change.</p>
-      </div>
-    </section>
+<!--    <section class="case-section">-->
+<!--      <h2>Why give therapists authoring control?</h2>-->
+<!--      <div class="body">-->
+<!--        <p>In our clinic deployment, a speech-language therapist ran robot sessions independently. I’m building on that work so therapists can also create and adapt the activities they use as a child’s needs change.</p>-->
+<!--      </div>-->
+<!--    </section>-->
 
     <a class="next" href="clinic.html">
       <div>
