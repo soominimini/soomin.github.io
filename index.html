@@ -144,14 +144,36 @@
       .paper-thumb { width: 100%; height: 180px; }
       .news li { grid-template-columns: 4.75rem 1fr; }
     }
+    /* Selected Work */
+    .work-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+    .work-card { display: flex; flex-direction: column; overflow: hidden; border: 1px solid #dce1e8; border-radius: 10px; color: #222; }
+    .work-card:hover { border-color: #0056b3; text-decoration: none; }
+    .work-card:hover .work-link { text-decoration: underline; }
+    .work-card:focus-visible { outline: 3px solid #0056b3; outline-offset: 4px; }
+    .work-card img { display: block; width: 100%; height: 180px; object-fit: contain; background: #f4f4f0; }
+    .work-card-copy { display: flex; flex: 1; flex-direction: column; gap: 0.45rem; padding: 1rem; }
+    .work-card h3 { color: #111; font-size: 1.05rem; line-height: 1.35; }
+    .work-card p { color: #444; font-size: 0.9rem; }
+    .work-card .work-link { margin-top: auto; padding-top: 0.35rem; color: #0056b3; font-weight: 600; }
+    .work-status { font-size: 0.72rem; font-weight: 600; color: #244c39; }
+
+    @media (max-width: 560px) {
+      .work-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 420px) {
+      .site-nav { padding-inline: 0.75rem; }
+      .site-nav .nav-links a { padding-inline: 0.35rem; }
+    }
   </style>
 </head>
 <body>
 
-  <nav>
+  <nav class="site-nav" aria-label="Main navigation">
     <a class="nav-name" href="#top">Soomin Shin</a>
     <ul class="nav-links">
       <li><a href="#intro">About</a></li>
+      <li><a href="#work">Work</a></li>
       <li><a href="#news">News</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="CV.pdf">CV</a></li>
@@ -191,6 +213,31 @@
       </div>
     </section>
 
+    <!-- SELECTED WORK -->
+    <section id="work" aria-labelledby="work-title">
+      <h2 id="work-title">Selected Work</h2>
+      <div class="work-grid">
+        <a class="work-card" href="work/clinic.html">
+          <img src="work/media/qtrobot-therapy-setup.png" alt="QTrobot beside a tablet and a therapy activity card" loading="lazy" />
+          <div class="work-card-copy">
+            <span class="work-status">Co-design &amp; field study</span>
+            <h3>A therapy robot in a real clinic, with no researchers present</h3>
+            <p>How a tablet dashboard helped a therapist run robot activities in routine pediatric speech-language sessions.</p>
+            <span class="work-link">Read case study <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+        <a class="work-card" href="work/authoring.html">
+          <img src="images/thumbs/llm-authoring.jpg" alt="LLM-powered authoring pipeline" loading="lazy" />
+          <div class="work-card-copy">
+            <span class="work-status">LLM- and VLM-powered prototype · In progress</span>
+            <h3>Helping therapists design their own robot interactions</h3>
+            <p>An end-to-end pipeline that helps therapists generate, edit, and run robot interactions tailored to each child.</p>
+            <span class="work-link">Read case study <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+      </div>
+    </section>
+
     <!-- NEWS -->
     <section id="news">
       <h2>News</h2>
@@ -219,7 +266,7 @@
       <div class="paper">
         <img class="paper-thumb" src="images/thumbs/llm-authoring.jpg" alt="LLM-powered authoring pipeline" loading="lazy" />
         <div>
-          <span class="paper-headline">Therapists design robot interactions themselves</span>
+          <a class="paper-headline" href="work/authoring.html">Therapists design robot interactions themselves</a>
           <p class="paper-desc">Each child in speech therapy needs activities matched to their age, level, and interests. Today, a researcher must program every new robot interaction. I am building an LLM-powered authoring system so that therapists can create and adapt robot interactions themselves. The goal is a robot that stays useful for years and serves children across a wide range of ages and diagnoses.</p>
           <div class="paper-cite">
             <span class="paper-title"><span class="tag">Ongoing</span>LLM-powered Social Robot Authoring System for Non-Technical End-Users</span>
@@ -231,8 +278,8 @@
       <div class="paper">
         <img class="paper-thumb" src="images/thumbs/deployment.jpg" alt="In-the-wild deployment at a speech therapy centre" loading="lazy" />
         <div>
-          <span class="paper-headline">A therapy robot in a real clinic, with no researchers present</span>
-          <p class="paper-desc">Can therapists use social robots in routine practice without engineers or researchers? A therapist used our social robot system in regular practice with six children with language delay. Each child had seven weekly sessions within an 11-week period, and no researchers were on site. The therapist reported that the robot helped children regain attention, become calm during meltdowns, and stay motivated. For some children, though, the fixed robot scripts did not match their developmental level or became repetitive. This result motivates my current work on therapist authoring.</p>
+          <a class="paper-headline" href="work/clinic.html">A therapy robot in a real clinic, with no researchers present</a>
+          <p class="paper-desc">Over a six-month deployment with nine children, a therapist operated our social robot during routine pediatric speech-language therapy without researchers on site. The therapist reported that the robot could help children refocus, calm down, and stay engaged.</p>
           <div class="paper-cite">
             <span class="paper-title"><span class="tag journal">Journal</span>From co-designed personas to in-the-wild deployment: a therapist-operable social robot platform for pediatric speech-language therapy</span>
             <p class="paper-authors"><strong>S. Shin</strong>, S. Chandra, A. Rajan, S. Shah, K. Dautenhahn</p>
@@ -249,7 +296,7 @@
       <div class="paper">
         <img class="paper-thumb" src="images/thumbs/qtrobot.jpg" alt="QTrobot with tablet and therapy cards" loading="lazy" />
         <div>
-          <span class="paper-headline">Designing a robot that therapists can run without engineers</span>
+          <a class="paper-headline" href="work/clinic.html#co-design">Designing a robot that therapists can run without engineers</a>
           <p class="paper-desc">What do non-technical users, such as therapists, need to use social robots in real-world settings? We co-designed the robot with two speech-language therapists for 22 months and identified five design requirements:</p>
           <ul class="paper-list">
             <li>Instant control during sessions</li>
