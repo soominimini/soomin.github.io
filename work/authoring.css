@@ -1,4 +1,5 @@
-.authoring-diagram h3 {
+.authoring-diagram h3,
+.authoring-diagram .pipeline-title {
   margin-bottom: 0.65rem;
   color: var(--nav);
   font-size: 1.02rem;

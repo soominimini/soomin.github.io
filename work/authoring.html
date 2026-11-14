@@ -28,7 +28,7 @@
     <header class="case-intro">
       <p class="label">LLM- and VLM-powered prototype · In progress</p>
       <h1>Helping therapists design their own robot interactions</h1>
-      <p class="lead">In our clinic deployment, a speech-language therapist could run QTrobot activities independently. Researchers still prepared the robot’s scripts. I’m building an end-to-end authoring pipeline that gives therapists control over the robot interactions themselves, so they can tailor interactions to each child’s language goals, abilities, and interests.</p>
+      <p class="lead">In our clinic deployment, a speech-language therapist could run robot activities independently. Researchers still prepared the robot’s scripts. I’m building an end-to-end authoring pipeline that gives therapists control over the robot interactions themselves, so they can tailor interactions to each child’s language goals, abilities, and interests.</p>
       <p class="role">My role · Project lead</p>
     </header>
 
@@ -48,27 +48,35 @@
       <h2 id="activity-flows">How the pipeline changes by activity</h2>
 
       <figure class="authoring-diagram">
-        <h3>WH questions for image card</h3>
+        <h3>WH conversational cards</h3>
 
               <figure class="authoring-diagram">
         <h3>Conventional therapy, current robot-supported therapy, new VLM-powered robot therapy</h3>
         <img src="media/wh-questions-comparison.webp" width="5025" height="2090" loading="lazy" alt="In conventional therapy, a therapist asks the child a question from a physical card. In current robot-supported therapy, a researcher loads a prewritten question list onto QTrobot and a therapist taps a tablet button to have it ask a question. In the VLM-powered workflow, the therapist shows the picture card to QTrobot, which asks a question about it." />
         <figcaption>
-          <p>In conventional therapy, the therapist shows a picture card and asks a question like “Why do you think the child is crying?” In the current robot-supported workflow, the therapist taps a tablet button and robot asks a question from a researcher-written list. With therapist authoring, the therapist shows the picture card to robot, the system drafts questions about the scene in the picture, and robot asks the questions.</p>
+          <p>In conventional therapy, the therapist shows a picture card and asks a question like “Why do you think the child is crying?” In the current robot-supported workflow, the therapist taps a tablet button and robotq asks a question from a researcher-written list. With therapist authoring, the therapist shows the picture card to robot, the system drafts questions about the scene in the picture, and robot asks the questions.</p>
           <a href="media/wh-questions-comparison.webp" aria-label="View the WH questions workflow comparison at full size">View full size</a>
         </figcaption>
       </figure>
         <img src="media/scene-based-wh-questions.png" width="2340" height="374" loading="lazy" alt="The system uses a description of a picture card to generate questions for therapist review before QTrobot presents them." />
         <figcaption>
-          <p>The system describes a picture card and generates questions about the scene, such as “Where is the tree?” The therapist reviews the questions before QTrobot presents them.</p>
+          <p>The system describes a picture card and generates questions about the scene, such as “Where is the tree?” The therapist reviews the questions before robot presents them.</p>
           <a href="media/scene-based-wh-questions.png" aria-label="View scene-based wh questions diagram at full size">View full size</a>
         </figcaption>
       </figure>
 
+      <figure class="authoring-diagram">
+        <h3>Following instructions (conventional -> current robot-support therapy -> VLM-powered robot therapy)</h3>
+        <img src="media/following-instructions-comparison.webp" width="4909" height="2098" loading="lazy" alt="Three workflows for the same instruction. In conventional therapy, the therapist speaks and the child places a real apple beside a banana. In current robot-supported therapy, researchers prepare the spoken instructions and tablet visuals. QTrobot speaks and the child drags the apple on the tablet. In the VLM-powered workflow, QTrobot speaks and the child moves real fruit within its view." />
+        <figcaption>
+          <p>In conventional therapy, the therapist gives the instruction and the child moves real fruit. In current robot-supported therapy, QTrobot reads a researcher-written instruction and the child moves the apple on a tablet using visuals the researchers prepared. In the VLM-powered workflow, the child follows robot’s instruction with real objects.</p>
+          <a href="media/following-instructions-comparison.webp" aria-label="View the following instructions comparison at full size">View full size</a>
+        </figcaption>
+      </figure>
 
 
       <figure class="authoring-diagram">
-        <h3>Following instructions</h3>
+        <h3>VLM-powered robot pipeline</h3>
         <img src="media/following-instructions.png" width="2333" height="382" loading="lazy" alt="The system generates instructions for therapist review. QTrobot delivers them, checks the child’s response, and gives feedback." />
         <figcaption>
           <p>The system drafts instructions matched to the child’s language targets. QTrobot gives an approved instruction using objects in the room, checks the child’s response, and gives feedback.</p>
@@ -76,20 +84,21 @@
         </figcaption>
       </figure>
 
+
       <figure class="authoring-diagram">
-        <h3>Three ways to practice following instructions</h3>
-        <img src="media/following-instructions-comparison.webp" width="4909" height="2098" loading="lazy" alt="Three workflows for the same instruction. In conventional therapy, the therapist speaks and the child places a real apple beside a banana. In current robot-supported therapy, researchers prepare the spoken instructions and tablet visuals. QTrobot speaks and the child drags the apple on the tablet. In the VLM-powered workflow, QTrobot speaks and the child moves real fruit within its view." />
+        <h3>Story understanding</h3>
+        <img src="media/story-understanding-comparison.webp" width="4874" height="1929" loading="lazy" alt="Three story-understanding workflows. A therapist reads a physical picture book. QTrobot reads a story scripted by researchers with facial expressions and gestures, while a tablet shows illustrations. In the LLM-powered prototype, QTrobot narrates a personalized story with generated expression and gesture cues." />
         <figcaption>
-          <p>In conventional therapy, the therapist gives the instruction and the child moves real fruit. In current robot-supported therapy, QTrobot reads a researcher-written instruction and the child moves the apple on a tablet using visuals the researchers prepared. In the VLM-powered workflow, the child follows QTrobot’s instruction with real objects.</p>
-          <a href="media/following-instructions-comparison.webp" aria-label="View the following instructions comparison at full size">View full size</a>
+          <p>In conventional therapy, the therapist reads from a picture book. In current robot-supported therapy, QTrobot narrates a story that researchers wrote and marked with facial expression and gesture cues. A tablet shows the illustrations. In the LLM-powered prototype, robot narrates a story tailored to the child with generated cues for its expressions and gestures.</p>
+          <a href="media/story-understanding-comparison.webp" aria-label="View the story understanding comparison at full size">View full size</a>
         </figcaption>
       </figure>
 
       <figure class="authoring-diagram">
-        <h3>Story understanding</h3>
+        <h4 class="pipeline-title">Story understanding pipeline</h4>
         <img src="media/story-understanding.png" width="2423" height="381" loading="lazy" alt="Story flow from child profile and language targets to story and question generation, sentence-level emotion tags, therapist review, and delivery through robot speech, gestures, and facial expressions." />
         <figcaption>
-          <p>The system drafts a personalized story and comprehension questions. It assigns sentence-level emotion tags that guide QTrobot’s gestures and facial expressions. The therapist reviews the story and questions before the robot presents them.</p>
+          <p>The system drafts a personalized story and comprehension questions. It assigns sentence-level emotion tags that guide robot’s gestures and facial expressions. The therapist reviews the story and questions before the robot presents them.</p>
           <a href="media/story-understanding.png" aria-label="View story understanding diagram at full size">View full size</a>
         </figcaption>
       </figure>
